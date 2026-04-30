@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GanymeDEV | Soluciones Tecnologicas</title>
+  <meta name="description" content="GanymeDEV - Soluciones tecnologicas y desarrollo de software a medida. Transformamos ideas en codigo.">
+  <link rel="icon" type="image/png" href="assets/img/logos/logo2.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/img/logos/logo2.png" alt="GanymeDEV Logo" class="nav-logo-img">
+        <span class="nav-logo-text">GANYME<span class="accent">DEV</span></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#sobre" class="nav-link">Nosotros</a></li>
+        <li><a href="#contacto" class="nav-link nav-cta">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <img src="assets/img/logos/logo1.png" alt="GanymeDEV" class="hero-logo">
+      <h1 class="hero-title">GANYME<span class="accent">DEV</span></h1>
+      <p class="hero-subtitle">Soluciones Tecnologicas & Desarrollo de Software</p>
+      <p class="hero-desc">Transformamos ideas en codigo. Desarrollo web, aplicaciones y automatizacion con tecnologia de vanguardia.</p>
+      <div class="hero-buttons">
+        <a href="#servicios" class="btn btn-primary">Explorar Servicios</a>
+        <a href="#contacto" class="btn btn-outline">Contactanos</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <h2 class="section-title">Nuestros <span class="accent">Servicios</span></h2>
+      <p class="section-subtitle">Soluciones integrales para llevar tu proyecto al siguiente nivel</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">&#60;/&#62;</div>
+          <h3>Desarrollo Web</h3>
+          <p>Sitios web modernos, responsivos y optimizados. Desde landing pages hasta plataformas complejas.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#9881;</div>
+          <h3>Automatizacion</h3>
+          <p>Automatizamos procesos repetitivos con scripts, bots e integraciones que ahorran tiempo y recursos.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#9741;</div>
+          <h3>Aplicaciones</h3>
+          <p>Apps de escritorio y moviles con interfaces intuitivas y rendimiento optimo.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#9729;</div>
+          <h3>Cloud & DevOps</h3>
+          <p>Infraestructura en la nube, CI/CD, contenedores y despliegue continuo para tu proyecto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="section section-alt" id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre <span class="accent">Nosotros</span></h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>GanymeDEV nace de la pasion por la tecnologia y la resolucion de problemas. Somos un equipo comprometido con entregar soluciones de software que realmente funcionen.</p>
+          <p>Trabajamos con las tecnologias mas actuales, desde desarrollo frontend y backend hasta inteligencia artificial y automatizacion, siempre con foco en calidad y resultados.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number accent">+50</span>
+              <span class="stat-label">Proyectos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number accent">24/7</span>
+              <span class="stat-label">Soporte</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number accent">100%</span>
+              <span class="stat-label">Compromiso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <h2 class="section-title">Hablemos de tu <span class="accent">Proyecto</span></h2>
+      <p class="section-subtitle">Escribinos y te respondemos en menos de 24 horas</p>
+      <div class="contact-wrapper">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Tu email" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Contanos tu idea..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Enviar Mensaje</button>
+        </form>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">&#9993;</span>
+            <span>ganymedev.sdk@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#127758;</span>
+            <span>ganymedev.github.io</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="nav-logo-text">GANYME<span class="accent">DEV</span></span>
+        <p>&copy; 2026 GanymeDEV. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
