@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GanymeDEV | Soluciones Tecnologicas</title>
-  <meta name="description" content="GanymeDEV - Soluciones tecnologicas y desarrollo de software a medida. Transformamos ideas en codigo.">
+  <title>GanymeDEV | Desarrollo Web & Soluciones Tecnológicas</title>
+  <meta name="description" content="GanymeDEV — Estudio de desarrollo web y software. Creamos experiencias digitales únicas, aplicaciones y automatización con tecnología de vanguardia.">
+  <meta name="keywords" content="desarrollo web, software, portfolio, aplicaciones, automatización, GanymeDEV">
+  <meta property="og:title" content="GanymeDEV | Desarrollo Web & Soluciones Tecnológicas">
+  <meta property="og:description" content="Estudio de desarrollo web y software. Creamos experiencias digitales únicas.">
+  <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/img/logos/logo2.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -19,12 +26,14 @@
         <img src="assets/img/logos/logo2.png" alt="GanymeDEV Logo" class="nav-logo-img">
         <span class="nav-logo-text">GANYME<span class="accent">DEV</span></span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#hero" class="nav-link active">Inicio</a></li>
         <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#tecnologias" class="nav-link">Tech</a></li>
         <li><a href="#sobre" class="nav-link">Nosotros</a></li>
         <li><a href="#contacto" class="nav-link nav-cta">Contacto</a></li>
       </ul>
@@ -33,106 +42,514 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero-bg-grid"></div>
+    <canvas class="hero-particles" id="heroParticles"></canvas>
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-grid-bg"></div>
     <div class="hero-content">
-      <img src="assets/img/logos/logo1.png" alt="GanymeDEV" class="hero-logo">
-      <h1 class="hero-title">GANYME<span class="accent">DEV</span></h1>
-      <p class="hero-subtitle">Soluciones Tecnologicas & Desarrollo de Software</p>
-      <p class="hero-desc">Transformamos ideas en codigo. Desarrollo web, aplicaciones y automatizacion con tecnologia de vanguardia.</p>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Disponible para proyectos
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-line">Creamos</span>
+        <span class="hero-line gradient-text">Experiencias</span>
+        <span class="hero-line">Digitales</span>
+      </h1>
+      <p class="hero-typed" id="heroTyped"></p>
+      <p class="hero-desc">Estudio de desarrollo web y software. Transformamos ideas en productos digitales que destacan por su diseño, rendimiento y experiencia de usuario.</p>
       <div class="hero-buttons">
-        <a href="#servicios" class="btn btn-primary">Explorar Servicios</a>
-        <a href="#contacto" class="btn btn-outline">Contactanos</a>
+        <a href="#portfolio" class="btn btn-primary">
+          <span>Ver Portfolio</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contacto" class="btn btn-outline">Iniciar Proyecto</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-value" data-count="50">0</span><span class="metric-plus">+</span>
+          <span class="metric-label">Proyectos</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <span class="metric-value" data-count="30">0</span><span class="metric-plus">+</span>
+          <span class="metric-label">Clientes</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <span class="metric-value" data-count="3">0</span>
+          <span class="metric-label">Años exp.</span>
+        </div>
       </div>
     </div>
     <div class="hero-scroll">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
       <span>Scroll</span>
-      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  <!-- SERVICES -->
   <section class="section" id="servicios">
     <div class="container">
-      <h2 class="section-title">Nuestros <span class="accent">Servicios</span></h2>
-      <p class="section-subtitle">Soluciones integrales para llevar tu proyecto al siguiente nivel</p>
+      <div class="section-header">
+        <span class="section-tag">Servicios</span>
+        <h2 class="section-title">Soluciones que <span class="gradient-text">impulsan</span> tu negocio</h2>
+        <p class="section-subtitle">Desarrollo integral con las mejores prácticas y tecnologías actuales</p>
+      </div>
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">&#60;/&#62;</div>
+        <div class="service-card" data-tilt>
+          <div class="service-card-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+              <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+            </svg>
+          </div>
           <h3>Desarrollo Web</h3>
-          <p>Sitios web modernos, responsivos y optimizados. Desde landing pages hasta plataformas complejas.</p>
+          <p>Sitios web y aplicaciones modernas con React, Next.js, Vue y tecnologías de vanguardia. Rendimiento, SEO y diseño responsivo.</p>
+          <div class="service-tags">
+            <span>React</span><span>Next.js</span><span>Vue</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">&#9881;</div>
-          <h3>Automatizacion</h3>
-          <p>Automatizamos procesos repetitivos con scripts, bots e integraciones que ahorran tiempo y recursos.</p>
+        <div class="service-card" data-tilt>
+          <div class="service-card-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3>Apps & Plataformas</h3>
+          <p>Aplicaciones de escritorio y móviles con interfaces intuitivas. Dashboards, sistemas de gestión y plataformas SaaS.</p>
+          <div class="service-tags">
+            <span>Electron</span><span>PWA</span><span>Mobile</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">&#9741;</div>
-          <h3>Aplicaciones</h3>
-          <p>Apps de escritorio y moviles con interfaces intuitivas y rendimiento optimo.</p>
+        <div class="service-card" data-tilt>
+          <div class="service-card-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Automatización & AI</h3>
+          <p>Bots, scrapers, pipelines de datos e integraciones con IA. Automatizamos procesos para maximizar eficiencia.</p>
+          <div class="service-tags">
+            <span>Python</span><span>AI/ML</span><span>APIs</span>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">&#9729;</div>
+        <div class="service-card" data-tilt>
+          <div class="service-card-glow"></div>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+              <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2"/><path d="M13 2.05A10 10 0 0121.95 11"/><path d="M18 2v4h4"/>
+            </svg>
+          </div>
           <h3>Cloud & DevOps</h3>
-          <p>Infraestructura en la nube, CI/CD, contenedores y despliegue continuo para tu proyecto.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE NOSOTROS -->
-  <section class="section section-alt" id="sobre">
-    <div class="container">
-      <h2 class="section-title">Sobre <span class="accent">Nosotros</span></h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>GanymeDEV nace de la pasion por la tecnologia y la resolucion de problemas. Somos un equipo comprometido con entregar soluciones de software que realmente funcionen.</p>
-          <p>Trabajamos con las tecnologias mas actuales, desde desarrollo frontend y backend hasta inteligencia artificial y automatizacion, siempre con foco en calidad y resultados.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number accent">+50</span>
-              <span class="stat-label">Proyectos</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number accent">24/7</span>
-              <span class="stat-label">Soporte</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number accent">100%</span>
-              <span class="stat-label">Compromiso</span>
-            </div>
+          <p>Infraestructura en la nube, CI/CD, Docker, Kubernetes. Despliegue continuo y escalabilidad para tu proyecto.</p>
+          <div class="service-tags">
+            <span>AWS</span><span>Docker</span><span>CI/CD</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="section" id="contacto">
+  <!-- PORTFOLIO -->
+  <section class="section section-dark" id="portfolio">
     <div class="container">
-      <h2 class="section-title">Hablemos de tu <span class="accent">Proyecto</span></h2>
-      <p class="section-subtitle">Escribinos y te respondemos en menos de 24 horas</p>
-      <div class="contact-wrapper">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Proyectos <span class="gradient-text">destacados</span></h2>
+        <p class="section-subtitle">Una selección de nuestros trabajos más recientes</p>
+      </div>
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="app">Apps</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+      </div>
+      <div class="portfolio-grid">
+        <article class="project-card" data-category="web">
+          <div class="project-thumb" style="--grad-1: #667eea; --grad-2: #764ba2;">
+            <div class="project-thumb-pattern">
+              <div class="thumb-mockup">
+                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                <div class="mockup-content">
+                  <div class="mockup-line w80"></div>
+                  <div class="mockup-line w60"></div>
+                  <div class="mockup-blocks">
+                    <div class="mockup-block"></div>
+                    <div class="mockup-block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="project-view">Ver Proyecto</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>NexaFlow Studio</h3>
+            <p>Plataforma creativa para diseñadores con editor en tiempo real y colaboración.</p>
+            <div class="project-tech">
+              <span>React</span><span>Node.js</span><span>WebSocket</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="ecommerce">
+          <div class="project-thumb" style="--grad-1: #f093fb; --grad-2: #f5576c;">
+            <div class="project-thumb-pattern">
+              <div class="thumb-mockup">
+                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                <div class="mockup-content">
+                  <div class="mockup-grid-3">
+                    <div class="mockup-card"></div>
+                    <div class="mockup-card"></div>
+                    <div class="mockup-card"></div>
+                  </div>
+                  <div class="mockup-line w40"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="project-view">Ver Proyecto</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Kōra Commerce</h3>
+            <p>E-commerce de moda premium con experiencia de compra inmersiva y checkout optimizado.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>Stripe</span><span>Sanity</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="dashboard">
+          <div class="project-thumb" style="--grad-1: #4facfe; --grad-2: #00f2fe;">
+            <div class="project-thumb-pattern">
+              <div class="thumb-mockup mockup-dark">
+                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                <div class="mockup-content">
+                  <div class="mockup-sidebar"></div>
+                  <div class="mockup-main">
+                    <div class="mockup-chart"></div>
+                    <div class="mockup-line w60"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="project-view">Ver Proyecto</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Pulse Analytics</h3>
+            <p>Dashboard de analítica en tiempo real con visualizaciones interactivas y reportes.</p>
+            <div class="project-tech">
+              <span>Vue</span><span>D3.js</span><span>Python</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="app">
+          <div class="project-thumb" style="--grad-1: #a18cd1; --grad-2: #fbc2eb;">
+            <div class="project-thumb-pattern">
+              <div class="thumb-mockup mockup-mobile">
+                <div class="mockup-notch"></div>
+                <div class="mockup-content">
+                  <div class="mockup-circle"></div>
+                  <div class="mockup-line w60"></div>
+                  <div class="mockup-line w40"></div>
+                  <div class="mockup-blocks">
+                    <div class="mockup-block tall"></div>
+                    <div class="mockup-block tall"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="project-view">Ver Proyecto</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Vento Fitness</h3>
+            <p>App de fitness con tracking de rutinas, nutrición y progreso personal.</p>
+            <div class="project-tech">
+              <span>React Native</span><span>Firebase</span><span>AI</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="web">
+          <div class="project-thumb" style="--grad-1: #43e97b; --grad-2: #38f9d7;">
+            <div class="project-thumb-pattern">
+              <div class="thumb-mockup">
+                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                <div class="mockup-content">
+                  <div class="mockup-hero-block"></div>
+                  <div class="mockup-line w80"></div>
+                  <div class="mockup-line w50"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="project-view">Ver Proyecto</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Zenith Agency</h3>
+            <p>Sitio web corporativo para agencia de marketing digital con animaciones premium.</p>
+            <div class="project-tech">
+              <span>Astro</span><span>GSAP</span><span>Tailwind</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="ecommerce">
+          <div class="project-thumb" style="--grad-1: #fa709a; --grad-2: #fee140;">
+            <div class="project-thumb-pattern">
+              <div class="thumb-mockup">
+                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                <div class="mockup-content">
+                  <div class="mockup-line w70"></div>
+                  <div class="mockup-grid-2">
+                    <div class="mockup-card tall"></div>
+                    <div class="mockup-card tall"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="project-view">Ver Proyecto</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Savora Gourmet</h3>
+            <p>Tienda online de productos gourmet con suscripción y recomendaciones personalizadas.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>Shopify</span><span>AI</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section" id="tecnologias">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tecnologías</span>
+        <h2 class="section-title">Nuestro <span class="gradient-text">stack</span> tecnológico</h2>
+        <p class="section-subtitle">Herramientas y tecnologías que dominamos</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item" data-name="React">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="Node.js">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M12 22V12M3 7l9 5M21 7l-9 5"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="Python">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2C6.5 2 6 4.5 6 6v2h6v1H5C3 9 2 11 2 13.5S3.5 19 5 19h2v-2.5C7 14 9 13 11 13h4c2 0 3-1 3-3V6c0-2-1.5-4-6-4zm-2 2.5a1 1 0 110 2 1 1 0 010-2z"/><path d="M12 22c5.5 0 6-2.5 6-4v-2h-6v-1h7c2 0 3-2 3-4.5S20.5 5 19 5h-2v2.5c0 2.5-2 3.5-4 3.5h-4c-2 0-3 1-3 3v4c0 2 1.5 4 6 4zm2-2.5a1 1 0 110-2 1 1 0 010 2z"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="TypeScript">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M15 11v1.5c0 0 0-1.5 2-1.5s2 1.5 2 1.5v2c0 0 0 1.5-2 1.5s-2-1.5-2-1.5"/><path d="M5 11h5M7.5 11v5"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="Next.js">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M8 8l8 10M16 8v8"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="Vue.js">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 3h4l6 10L18 3h4L12 21 2 3z"/><path d="M7.5 3L12 10.5 16.5 3"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="Docker">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 14c0 0 1 4 6 4s8-2 10-4c0 0 1-2 0-3-1-1-2 0-2 0"/><rect x="5" y="9" width="3" height="3"/><rect x="9" y="9" width="3" height="3"/><rect x="13" y="9" width="3" height="3"/><rect x="9" y="5" width="3" height="3"/><rect x="13" y="5" width="3" height="3"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="AWS">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 16c0 0 3 3 8 3s8-3 8-3"/><path d="M6 12l3 6 3-8 3 8 3-6"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="MongoDB">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2c0 0-4 4-4 10s4 10 4 10c0 0 4-4 4-10S12 2 12 2z"/><path d="M12 2v20"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="PostgreSQL">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="Figma">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="6" y="2" width="6" height="6" rx="3"/><rect x="12" y="2" width="6" height="6" rx="3"/><rect x="6" y="9" width="6" height="6" rx="3"/><circle cx="15" cy="12" r="3"/><rect x="6" y="16" width="6" height="6" rx="3"/></svg>
+          </div>
+        </div>
+        <div class="tech-item" data-name="Git">
+          <div class="tech-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9.5 9.5L7.5 7.5M14.5 14.5l2 2"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section-dark" id="proceso">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Proceso</span>
+        <h2 class="section-title">Cómo <span class="gradient-text">trabajamos</span></h2>
+        <p class="section-subtitle">Un proceso claro y transparente de principio a fin</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Descubrimiento</h3>
+            <p>Analizamos tu idea, objetivos y audiencia. Definimos el alcance, funcionalidades y roadmap del proyecto.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Diseño</h3>
+            <p>Creamos wireframes y diseño UI/UX. Iteramos contigo hasta lograr la experiencia visual perfecta.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Desarrollo</h3>
+            <p>Código limpio, modular y escalable. Sprints con entregas parciales para que veas el avance en tiempo real.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Lanzamiento</h3>
+            <p>Testing exhaustivo, optimización de performance y deploy. Soporte post-lanzamiento incluido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nosotros</span>
+        <h2 class="section-title">Sobre <span class="gradient-text">GanymeDEV</span></h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-text-block">
+          <p class="about-lead">Somos un estudio de desarrollo enfocado en crear productos digitales que combinan <strong>diseño excepcional</strong> con <strong>tecnología robusta</strong>.</p>
+          <p>Nacimos de la pasión por resolver problemas reales con código. Cada proyecto es una oportunidad de superar expectativas — desde la primera línea de código hasta el deploy final.</p>
+          <p>Trabajamos con startups, empresas y emprendedores que buscan un partner tecnológico comprometido con la calidad y los resultados.</p>
+        </div>
+        <div class="about-values">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h4>Rendimiento</h4>
+            <p>Código optimizado, carga rápida, experiencia fluida.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h4>Puntualidad</h4>
+            <p>Deadlines cumplidos. Sprints organizados. Sin sorpresas.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a5 5 0 015 5c0 2-1 3-2 4l-1 1v2h-4v-2l-1-1c-1-1-2-2-2-4a5 5 0 015-5zM9 18h6M10 22h4"/></svg>
+            </div>
+            <h4>Innovación</h4>
+            <p>Tecnologías actuales, soluciones creativas, visión de futuro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-dark" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contacto</span>
+        <h2 class="section-title">Hablemos de tu <span class="gradient-text">proyecto</span></h2>
+        <p class="section-subtitle">Escribinos y te respondemos en menos de 24 horas</p>
+      </div>
+      <div class="contact-layout">
         <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Tu nombre" required>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Nombre</label>
+              <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="tu@email.com" required>
+            </div>
           </div>
           <div class="form-group">
-            <input type="email" name="email" placeholder="Tu email" required>
+            <label for="contact-subject">Asunto</label>
+            <select id="contact-subject" name="subject">
+              <option value="web">Desarrollo Web</option>
+              <option value="app">App / Plataforma</option>
+              <option value="automation">Automatización</option>
+              <option value="consulting">Consultoría</option>
+              <option value="other">Otro</option>
+            </select>
           </div>
           <div class="form-group">
-            <textarea name="message" rows="5" placeholder="Contanos tu idea..." required></textarea>
+            <label for="contact-message">Mensaje</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Contanos sobre tu proyecto..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Enviar Mensaje</button>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Enviar Mensaje</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
         </form>
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-icon">&#9993;</span>
-            <span>ganymedev.sdk@gmail.com</span>
+        <div class="contact-aside">
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </div>
+            <h4>Email</h4>
+            <a href="mailto:ganymedev.sdk@gmail.com">ganymedev.sdk@gmail.com</a>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">&#127758;</span>
-            <span>ganymedev.github.io</span>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </div>
+            <h4>GitHub</h4>
+            <a href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer">github.com/ganymedevsdk</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <h4>Web</h4>
+            <span>ganymedevsdk.github.io</span>
           </div>
         </div>
       </div>
@@ -142,9 +559,38 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <span class="nav-logo-text">GANYME<span class="accent">DEV</span></span>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="nav-logo-text">GANYME<span class="accent">DEV</span></span>
+          <p>Desarrollo web & software a medida. Transformamos ideas en productos digitales excepcionales.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Navegación</h5>
+            <a href="#hero">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contacto">Contacto</a>
+          </div>
+          <div class="footer-col">
+            <h5>Servicios</h5>
+            <a href="#servicios">Desarrollo Web</a>
+            <a href="#servicios">Apps & Plataformas</a>
+            <a href="#servicios">Automatización</a>
+            <a href="#servicios">Cloud & DevOps</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <p>&copy; 2026 GanymeDEV. Todos los derechos reservados.</p>
+        <div class="footer-social">
+          <a href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+          <a href="mailto:ganymedev.sdk@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
