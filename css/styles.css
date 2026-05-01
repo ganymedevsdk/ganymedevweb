@@ -130,9 +130,27 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-logo-img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 40%, var(--bg-primary), var(--bg-deep) 70%);
+  border: 1px solid rgba(0, 245, 212, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 0 14px rgba(0, 245, 212, 0.12);
+  mix-blend-mode: screen;
+  filter: brightness(0.95) contrast(1.05) saturate(0.85);
+  transition: var(--transition);
+}
+
+.nav-logo:hover .nav-logo-img {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+    0 0 22px rgba(0, 245, 212, 0.28);
+  border-color: rgba(0, 245, 212, 0.5);
+  transform: rotate(8deg);
 }
 
 .nav-logo-text {
@@ -727,6 +745,44 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 16/10;
   background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
   overflow: hidden;
+  display: block;
+  cursor: pointer;
+}
+
+.project-collage .collage-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3px;
+  padding: 0;
+  background: var(--bg-deep);
+  overflow: hidden;
+}
+
+.project-collage .collage-grid img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  object-fit: cover;
+  filter: saturate(0.92) brightness(0.88);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s;
+}
+
+.project-collage:hover .collage-grid img {
+  filter: saturate(1.1) brightness(1);
+  transform: scale(1.04);
+}
+
+.project-collage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(8, 11, 22, 0.55) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .project-thumb-pattern {
@@ -949,6 +1005,175 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== TECH STACK ===== */
+.tech-orbit-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 56px;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 245, 212, 0.18);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.orbit-ring-1 { width: 38%; height: 38%; border-color: rgba(0, 245, 212, 0.22); }
+.orbit-ring-2 { width: 66%; height: 66%; border-color: rgba(123, 97, 255, 0.18); }
+.orbit-ring-3 { width: 96%; height: 96%; border-color: rgba(244, 114, 182, 0.12); border-style: dotted; }
+
+.orbit-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(0, 245, 212, 0.18), transparent 70%),
+    var(--bg-card);
+  border: 1px solid rgba(0, 245, 212, 0.3);
+  box-shadow:
+    0 0 30px rgba(0, 245, 212, 0.18),
+    inset 0 0 20px rgba(0, 245, 212, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  backdrop-filter: blur(8px);
+  z-index: 5;
+}
+
+.orbit-core-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.orbit-core-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--accent);
+}
+
+.orbit-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbitSpin var(--orbit-duration, 28s) linear infinite;
+}
+
+.orbit-track-1 {
+  width: 66%;
+  height: 66%;
+  --orbit-duration: 32s;
+}
+
+.orbit-track-2 {
+  width: 96%;
+  height: 96%;
+  --orbit-duration: 48s;
+  animation-direction: reverse;
+}
+
+@keyframes orbitSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbit-planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  transform: rotate(var(--orbit-angle, 0deg)) translateX(calc(50% * var(--orbit-radius, 1)));
+  pointer-events: auto;
+}
+
+.orbit-track-1 .orbit-planet { --orbit-radius: 4; }
+.orbit-track-2 .orbit-planet { --orbit-radius: 5.7; }
+
+.orbit-planet-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.05), transparent 60%),
+    var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transform: rotate(calc(-1 * var(--orbit-angle, 0deg)));
+  animation: orbitCounterSpin var(--orbit-duration, 32s) linear infinite;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.orbit-track-2 .orbit-planet-inner {
+  animation-direction: reverse;
+}
+
+@keyframes orbitCounterSpin {
+  from { transform: rotate(calc(-1 * var(--orbit-angle, 0deg))); }
+  to { transform: rotate(calc(-1 * var(--orbit-angle, 0deg) - 360deg)); }
+}
+
+.orbit-planet-inner svg {
+  width: 30px;
+  height: 30px;
+}
+
+.orbit-planet-inner::after {
+  content: attr(data-name);
+}
+
+.orbit-planet:hover .orbit-planet-inner {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 8px 28px rgba(0, 245, 212, 0.25);
+}
+
+.orbit-planet[data-name]::after {
+  content: attr(data-name);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: rotate(calc(-1 * var(--orbit-angle, 0deg))) translateX(-50%);
+  transform-origin: 0 -8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  animation: orbitCounterSpin var(--orbit-duration, 32s) linear infinite;
+  pointer-events: none;
+}
+
+.orbit-track-2 .orbit-planet[data-name]::after { animation-direction: reverse; }
+
+.orbit-planet:hover[data-name]::after { color: var(--accent); }
+
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
