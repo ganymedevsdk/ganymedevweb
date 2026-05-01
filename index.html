@@ -3,31 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GanymeDEV | Desarrollo Web & Soluciones Tecnológicas</title>
-  <meta name="description" content="GanymeDEV — Estudio de desarrollo web y software. Creamos experiencias digitales únicas, aplicaciones y automatización con tecnología de vanguardia.">
-  <meta name="keywords" content="desarrollo web, software, portfolio, aplicaciones, automatización, GanymeDEV">
-  <meta property="og:title" content="GanymeDEV | Desarrollo Web & Soluciones Tecnológicas">
-  <meta property="og:description" content="Estudio de desarrollo web y software. Creamos experiencias digitales únicas.">
+  <title>GanymeDEV · Estudio de Desarrollo Web & Software</title>
+  <meta name="description" content="GanymeDEV — Estudio de desarrollo web y software a medida. Sitios corporativos, e-commerce, plataformas y automatización con IA. Argentina.">
+  <meta name="keywords" content="desarrollo web, software a medida, sitios web, GanymeDEV, e-commerce, automatización, Argentina">
+  <meta name="theme-color" content="#080b16">
+  <meta name="author" content="GanymeDEV">
+  <link rel="canonical" href="https://ganymedevsdk.github.io/">
+
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="GanymeDEV">
+  <meta property="og:title" content="GanymeDEV · Estudio de Desarrollo Web & Software">
+  <meta property="og:description" content="Sitios web, plataformas y automatización con IA. Diseño y código a medida desde Argentina.">
+  <meta property="og:url" content="https://ganymedevsdk.github.io/">
+  <meta property="og:image" content="https://ganymedevsdk.github.io/assets/img/logos/logo2.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GanymeDEV · Estudio de Desarrollo Web & Software">
+  <meta name="twitter:description" content="Sitios web, plataformas y automatización con IA.">
+  <meta name="twitter:image" content="https://ganymedevsdk.github.io/assets/img/logos/logo2.png">
+
   <link rel="icon" type="image/svg+xml" href="assets/img/logos/favicon.svg">
   <link rel="alternate icon" type="image/png" href="assets/img/logos/logo2.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GanymeDEV",
+    "url": "https://ganymedevsdk.github.io/",
+    "logo": "https://ganymedevsdk.github.io/assets/img/logos/logo2.png",
+    "email": "ganymedev.sdk@gmail.com",
+    "sameAs": ["https://github.com/ganymedevsdk"],
+    "areaServed": "AR",
+    "description": "Estudio de desarrollo web y software a medida."
+  }
+  </script>
 </head>
 <body>
   <!-- CURSOR GLOW -->
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
   <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Principal">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <img src="assets/img/logos/logo2.png" alt="GanymeDEV Logo" class="nav-logo-img">
+      <a href="#hero" class="nav-logo" aria-label="GanymeDEV — inicio">
+        <img src="assets/img/logos/logo2.png" alt="" class="nav-logo-img" width="40" height="40">
         <span class="nav-logo-text">GANYME<span class="accent">DEV</span></span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
@@ -41,36 +71,38 @@
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <canvas class="hero-particles" id="heroParticles"></canvas>
-    <div class="hero-orbs">
+  <section class="hero" id="hero" aria-label="Presentación">
+    <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+    <div class="hero-orbs" aria-hidden="true">
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
     </div>
-    <div class="hero-grid-bg"></div>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="hero-content">
       <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Disponible para proyectos
+        <span class="badge-dot" aria-hidden="true"></span>
+        Disponible para nuevos proyectos
       </div>
       <h1 class="hero-title">
         <span class="hero-line">Creamos</span>
         <span class="hero-line gradient-text">Experiencias</span>
         <span class="hero-line">Digitales</span>
       </h1>
-      <p class="hero-typed" id="heroTyped"></p>
+      <p class="hero-typed" id="heroTyped" aria-live="polite"></p>
       <p class="hero-desc">Estudio de desarrollo web y software. Transformamos ideas en productos digitales que destacan por su diseño, rendimiento y experiencia de usuario.</p>
       <div class="hero-buttons">
         <a href="#portfolio" class="btn btn-primary">
           <span>Ver Portfolio</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#contacto" class="btn btn-outline">Iniciar Proyecto</a>
       </div>
     </div>
-    <div class="hero-scroll">
+    <div class="hero-scroll" aria-hidden="true">
       <div class="scroll-mouse">
         <div class="scroll-wheel"></div>
       </div>
@@ -79,18 +111,18 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="section" id="servicios">
+  <section class="section" id="servicios" aria-labelledby="servicios-title">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Servicios</span>
-        <h2 class="section-title">Soluciones que <span class="gradient-text">impulsan</span> tu negocio</h2>
+        <h2 class="section-title" id="servicios-title">Soluciones que <span class="gradient-text">impulsan</span> tu negocio</h2>
         <p class="section-subtitle">Desarrollo integral con las mejores prácticas y tecnologías actuales</p>
       </div>
       <div class="services-grid">
-        <div class="service-card" data-tilt>
-          <div class="service-card-glow"></div>
+        <article class="service-card">
+          <div class="service-card-glow" aria-hidden="true"></div>
           <div class="service-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg" aria-hidden="true">
               <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
             </svg>
           </div>
@@ -99,11 +131,11 @@
           <div class="service-tags">
             <span>React</span><span>Next.js</span><span>Vue</span>
           </div>
-        </div>
-        <div class="service-card" data-tilt>
-          <div class="service-card-glow"></div>
+        </article>
+        <article class="service-card">
+          <div class="service-card-glow" aria-hidden="true"></div>
           <div class="service-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg" aria-hidden="true">
               <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
             </svg>
           </div>
@@ -112,352 +144,335 @@
           <div class="service-tags">
             <span>Electron</span><span>PWA</span><span>Mobile</span>
           </div>
-        </div>
-        <div class="service-card" data-tilt>
-          <div class="service-card-glow"></div>
+        </article>
+        <article class="service-card">
+          <div class="service-card-glow" aria-hidden="true"></div>
           <div class="service-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg" aria-hidden="true">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <h3>Automatización & AI</h3>
+          <h3>Automatización & IA</h3>
           <p>Bots, prospección profesional para captar clientes, pipelines de datos e integraciones con IA. Automatizamos procesos para maximizar eficiencia.</p>
           <div class="service-tags">
             <span>Python</span><span>AI/ML</span><span>APIs</span>
           </div>
-        </div>
-        <div class="service-card" data-tilt>
-          <div class="service-card-glow"></div>
+        </article>
+        <article class="service-card">
+          <div class="service-card-glow" aria-hidden="true"></div>
           <div class="service-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="service-svg" aria-hidden="true">
               <path d="M8 6L2 12l6 6M16 6l6 6-6 6M14 4l-4 16"/>
             </svg>
           </div>
-          <h3>Programación en varios lenguajes</h3>
+          <h3>Programación Multilenguaje</h3>
           <p>Desarrollo robusto en C#, Java y SQL. Backends empresariales, sistemas de gestión y soluciones a medida con bases de datos relacionales.</p>
           <div class="service-tags">
             <span>C#</span><span>Java</span><span>SQL</span>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- PORTFOLIO -->
-  <section class="section section-dark" id="portfolio">
+  <section class="section section-dark" id="portfolio" aria-labelledby="portfolio-title">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Proyectos <span class="gradient-text">destacados</span></h2>
-        <p class="section-subtitle">Una selección de nuestros trabajos más recientes</p>
+        <h2 class="section-title" id="portfolio-title">Proyectos <span class="gradient-text">destacados</span></h2>
+        <p class="section-subtitle">Sitios reales entregados a clientes — capturados en producción</p>
       </div>
-      <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="web">Web</button>
-        <button class="filter-btn" data-filter="app">Apps</button>
-        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-        <button class="filter-btn" data-filter="dashboard">Dashboard</button>
-      </div>
-      <div class="portfolio-grid">
-        <article class="project-card" data-category="web">
-          <a href="https://www.kroneker.com.ar/" target="_blank" rel="noopener noreferrer" class="project-thumb project-collage" style="--grad-1: #2a3a5e; --grad-2: #0d1117;">
-            <div class="collage-grid">
-              <img src="assets/img/portfolio/kroneker-1.webp" alt="Kroneker - obra" loading="lazy">
-              <img src="assets/img/portfolio/kroneker-3.webp" alt="Kroneker - terreno" loading="lazy">
-              <img src="assets/img/portfolio/kroneker-2.webp" alt="Kroneker - galpón" loading="lazy">
-              <img src="assets/img/portfolio/kroneker-4.webp" alt="Kroneker - electricidad" loading="lazy">
+
+      <div class="cases-grid">
+        <article class="case-card" data-shots="5">
+          <a class="case-thumb" href="https://www.kroneker.com.ar/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Kroneker (abre en nueva pestaña)">
+            <div class="case-frame" aria-hidden="true">
+              <div class="case-frame-bar">
+                <span></span><span></span><span></span>
+                <span class="case-frame-url">kroneker.com.ar</span>
+              </div>
+              <div class="case-shots">
+                <img src="assets/img/portfolio/kroneker-shot-1.jpg" alt="Kroneker — landing principal con video aéreo" class="case-shot active" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/kroneker-shot-2.jpg" alt="Kroneker — sección de especialidades" class="case-shot" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/kroneker-shot-3.jpg" alt="Kroneker — galería de obras" class="case-shot" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/kroneker-shot-4.jpg" alt="Kroneker — proyectos destacados" class="case-shot" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/kroneker-shot-5.jpg" alt="Kroneker — pie de página y contacto" class="case-shot" loading="lazy" width="1440" height="900">
+              </div>
             </div>
-            <div class="project-overlay">
-              <span class="project-view">Visitar Sitio</span>
+            <div class="case-overlay">
+              <span class="case-cta">
+                Visitar sitio
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </span>
+            </div>
+            <div class="case-progress" aria-hidden="true">
+              <span class="case-progress-bar"></span>
             </div>
           </a>
-          <div class="project-info">
-            <h3>Kroneker</h3>
-            <p>Sitio corporativo para empresa de construcción, electricidad y obras industriales en Argentina.</p>
-            <div class="project-tech">
-              <span>Web</span><span>Responsive</span><span>SEO</span>
+          <div class="case-info">
+            <div class="case-info-head">
+              <h3>Kroneker</h3>
+              <span class="case-status">En vivo</span>
+            </div>
+            <p>Sitio corporativo para empresa de construcción, agrimensura, viviendas y obras industriales en Argentina. Performance y SEO optimizados.</p>
+            <div class="case-tech">
+              <span>Web</span><span>Responsive</span><span>SEO</span><span>Animaciones</span>
             </div>
           </div>
         </article>
-        <article class="project-card" data-category="ecommerce">
-          <div class="project-thumb" style="--grad-1: #f093fb; --grad-2: #f5576c;">
-            <div class="project-thumb-pattern">
-              <div class="thumb-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content">
-                  <div class="mockup-grid-3">
-                    <div class="mockup-card"></div>
-                    <div class="mockup-card"></div>
-                    <div class="mockup-card"></div>
-                  </div>
-                  <div class="mockup-line w40"></div>
-                </div>
+
+        <article class="case-card" data-shots="5">
+          <a class="case-thumb" href="https://www.nextlevelcctv.com.ar/" target="_blank" rel="noopener noreferrer" aria-label="Visitar NextLevel CCTV (abre en nueva pestaña)">
+            <div class="case-frame" aria-hidden="true">
+              <div class="case-frame-bar">
+                <span></span><span></span><span></span>
+                <span class="case-frame-url">nextlevelcctv.com.ar</span>
+              </div>
+              <div class="case-shots">
+                <img src="assets/img/portfolio/nextlevel-shot-1.jpg" alt="NextLevel CCTV — hero con cámaras de seguridad" class="case-shot active" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/nextlevel-shot-2.jpg" alt="NextLevel CCTV — servicios" class="case-shot" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/nextlevel-shot-3.jpg" alt="NextLevel CCTV — galería de trabajos" class="case-shot" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/nextlevel-shot-4.jpg" alt="NextLevel CCTV — comparador de calidad" class="case-shot" loading="lazy" width="1440" height="900">
+                <img src="assets/img/portfolio/nextlevel-shot-5.jpg" alt="NextLevel CCTV — formulario de contacto" class="case-shot" loading="lazy" width="1440" height="900">
               </div>
             </div>
-            <div class="project-overlay">
-              <span class="project-view">Ver Proyecto</span>
+            <div class="case-overlay">
+              <span class="case-cta">
+                Visitar sitio
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </span>
             </div>
-          </div>
-          <div class="project-info">
-            <h3>Kōra Commerce</h3>
-            <p>E-commerce de moda premium con experiencia de compra inmersiva y checkout optimizado.</p>
-            <div class="project-tech">
-              <span>Next.js</span><span>Stripe</span><span>Sanity</span>
-            </div>
-          </div>
-        </article>
-        <article class="project-card" data-category="dashboard">
-          <div class="project-thumb" style="--grad-1: #4facfe; --grad-2: #00f2fe;">
-            <div class="project-thumb-pattern">
-              <div class="thumb-mockup mockup-dark">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content">
-                  <div class="mockup-sidebar"></div>
-                  <div class="mockup-main">
-                    <div class="mockup-chart"></div>
-                    <div class="mockup-line w60"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-overlay">
-              <span class="project-view">Ver Proyecto</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Pulse Analytics</h3>
-            <p>Dashboard de analítica en tiempo real con visualizaciones interactivas y reportes.</p>
-            <div class="project-tech">
-              <span>Vue</span><span>D3.js</span><span>Python</span>
-            </div>
-          </div>
-        </article>
-        <article class="project-card" data-category="app">
-          <div class="project-thumb" style="--grad-1: #a18cd1; --grad-2: #fbc2eb;">
-            <div class="project-thumb-pattern">
-              <div class="thumb-mockup mockup-mobile">
-                <div class="mockup-notch"></div>
-                <div class="mockup-content">
-                  <div class="mockup-circle"></div>
-                  <div class="mockup-line w60"></div>
-                  <div class="mockup-line w40"></div>
-                  <div class="mockup-blocks">
-                    <div class="mockup-block tall"></div>
-                    <div class="mockup-block tall"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-overlay">
-              <span class="project-view">Ver Proyecto</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Vento Fitness</h3>
-            <p>App de fitness con tracking de rutinas, nutrición y progreso personal.</p>
-            <div class="project-tech">
-              <span>React Native</span><span>Firebase</span><span>AI</span>
-            </div>
-          </div>
-        </article>
-        <article class="project-card" data-category="web">
-          <a href="https://www.nextlevelcctv.com.ar/" target="_blank" rel="noopener noreferrer" class="project-thumb project-collage" style="--grad-1: #1f2937; --grad-2: #0d1117;">
-            <div class="collage-grid">
-              <img src="assets/img/portfolio/nextlevel-hero.jpg" alt="NextLevelCCTV - hero" loading="lazy">
-              <img src="assets/img/portfolio/nextlevel-2.jpg" alt="NextLevelCCTV - monitoreo" loading="lazy">
-              <img src="assets/img/portfolio/nextlevel-1.jpg" alt="NextLevelCCTV - cámara protegida" loading="lazy">
-              <img src="assets/img/portfolio/nextlevel-4.jpg" alt="NextLevelCCTV - exterior" loading="lazy">
-            </div>
-            <div class="project-overlay">
-              <span class="project-view">Visitar Sitio</span>
+            <div class="case-progress" aria-hidden="true">
+              <span class="case-progress-bar"></span>
             </div>
           </a>
-          <div class="project-info">
-            <h3>NextLevel CCTV</h3>
-            <p>Sitio web para empresa de instalación y monitoreo de cámaras de seguridad. SPA con galería e identidad visual.</p>
-            <div class="project-tech">
-              <span>SPA</span><span>Vite</span><span>SEO</span>
+          <div class="case-info">
+            <div class="case-info-head">
+              <h3>NextLevel CCTV</h3>
+              <span class="case-status">En vivo</span>
+            </div>
+            <p>Sitio para empresa de instalación y monitoreo de cámaras de seguridad en Buenos Aires. SPA con galería, comparador interactivo y formulario.</p>
+            <div class="case-tech">
+              <span>SPA</span><span>Vite</span><span>SEO</span><span>UI Custom</span>
             </div>
           </div>
         </article>
-        <article class="project-card" data-category="ecommerce">
-          <div class="project-thumb" style="--grad-1: #fa709a; --grad-2: #fee140;">
-            <div class="project-thumb-pattern">
-              <div class="thumb-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content">
-                  <div class="mockup-line w70"></div>
-                  <div class="mockup-grid-2">
-                    <div class="mockup-card tall"></div>
-                    <div class="mockup-card tall"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-overlay">
-              <span class="project-view">Ver Proyecto</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Savora Gourmet</h3>
-            <p>Tienda online de productos gourmet con suscripción y recomendaciones personalizadas.</p>
-            <div class="project-tech">
-              <span>Next.js</span><span>Shopify</span><span>AI</span>
-            </div>
-          </div>
-        </article>
+      </div>
+
+      <div class="cases-cta">
+        <p>¿Tu proyecto será el próximo?</p>
+        <a href="#contacto" class="btn btn-outline">Hablemos
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- TECH STACK -->
-  <section class="section" id="tecnologias">
+  <!-- TECH STACK / COSMOS -->
+  <section class="section section-cosmos" id="tecnologias" aria-labelledby="tech-title">
+    <div class="cosmos-bg" aria-hidden="true">
+      <div class="cosmos-stars cosmos-stars-1"></div>
+      <div class="cosmos-stars cosmos-stars-2"></div>
+      <div class="cosmos-stars cosmos-stars-3"></div>
+      <div class="cosmos-nebula cosmos-nebula-a"></div>
+      <div class="cosmos-nebula cosmos-nebula-b"></div>
+      <div class="cosmos-nebula cosmos-nebula-c"></div>
+    </div>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Tecnologías</span>
-        <h2 class="section-title">Nuestro <span class="gradient-text">stack</span> tecnológico</h2>
-        <p class="section-subtitle">Herramientas y tecnologías que dominamos</p>
+        <h2 class="section-title" id="tech-title">Nuestro <span class="gradient-text">stack</span> tecnológico</h2>
+        <p class="section-subtitle">Un sistema vivo de herramientas que orbitan alrededor de cada proyecto</p>
       </div>
-      <div class="tech-orbit-wrap">
-        <div class="orbit-ring orbit-ring-1"></div>
-        <div class="orbit-ring orbit-ring-2"></div>
-        <div class="orbit-ring orbit-ring-3"></div>
-        <div class="orbit-core" aria-hidden="true">
-          <span class="orbit-core-dot"></span>
-          <span class="orbit-core-label">DEV</span>
-        </div>
-        <div class="orbit-track orbit-track-1">
-          <div class="orbit-planet" data-name="C#" style="--orbit-angle: 0deg;">
-            <div class="orbit-planet-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M14 8.5a4 4 0 100 7M16 9v3M18 9v3M15 10.5h4M15 11.5h4"/></svg>
-            </div>
-          </div>
-          <div class="orbit-planet" data-name="Java" style="--orbit-angle: 180deg;">
-            <div class="orbit-planet-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 18c0 2 2 3 4 3s4-1 4-3"/><path d="M9 14c-2 .5-3 1.5-3 3 0 2 3 3 6 3s6-1 6-3c0-1-.7-2-2-2.5"/><path d="M10 11c-1 .5-2 1-2 2"/><path d="M12 3s2 2 2 4-3 3-3 5 2 3 2 3"/><path d="M9 8c0 1 1 2 2 2"/></svg>
-            </div>
+
+      <div class="cosmos" id="cosmos" aria-label="Visualización del stack tecnológico">
+
+        <span class="cosmos-tag tag-frontend">Frontend</span>
+        <span class="cosmos-tag tag-backend">Backend</span>
+        <span class="cosmos-tag tag-infra">Data &amp; Tools</span>
+
+        <div class="cosmos-core">
+          <div class="cosmos-core-ring"></div>
+          <div class="cosmos-core-disk">
+            <span class="cosmos-core-label">GANYME<span class="accent">DEV</span></span>
+            <span class="cosmos-core-sublabel">core</span>
           </div>
         </div>
-        <div class="orbit-track orbit-track-2">
-          <div class="orbit-planet" data-name="SQL" style="--orbit-angle: 90deg;">
-            <div class="orbit-planet-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
-            </div>
-          </div>
+
+        <div class="orbit orbit-1" style="--orbit-speed: 50s;">
+          <div class="orbit-line"></div>
+          <ul class="planets">
+            <li class="planet" style="--i:0;--n:6;--planet-color:#61dafb;" data-name="React">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+              </span>
+              <span class="planet-label">React</span>
+            </li>
+            <li class="planet" style="--i:1;--n:6;--planet-color:#5eead4;" data-name="Vue">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 3h4l6 10L18 3h4L12 21 2 3z"/><path d="M7.5 3L12 10.5 16.5 3"/></svg>
+              </span>
+              <span class="planet-label">Vue</span>
+            </li>
+            <li class="planet" style="--i:2;--n:6;--planet-color:#e6edf3;" data-name="Next.js">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M8 7v10M16 17V7l-8 10"/></svg>
+              </span>
+              <span class="planet-label">Next.js</span>
+            </li>
+            <li class="planet" style="--i:3;--n:6;--planet-color:#60a5fa;" data-name="TypeScript">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M5 11h6M8 11v7"/><path d="M19 11.5c0 0-.7-1.2-2.3-1.2s-2.4.9-2.4 1.7c0 2.3 4.7 1.4 4.7 3.7 0 .9-.9 1.8-2.5 1.8s-2.5-1-2.5-1"/></svg>
+              </span>
+              <span class="planet-label">TypeScript</span>
+            </li>
+            <li class="planet" style="--i:4;--n:6;--planet-color:#facc15;" data-name="JavaScript">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M9 10v6.5c0 .8-.7 1.5-1.5 1.5S6 17.3 6 16.5"/><path d="M18 11.5s-.7-1-2-1-2 .7-2 1.5c0 1.8 4 1.4 4 3.5 0 .8-.8 1.5-2 1.5s-2-.7-2-1.5"/></svg>
+              </span>
+              <span class="planet-label">JavaScript</span>
+            </li>
+            <li class="planet" style="--i:5;--n:6;--planet-color:#38bdf8;" data-name="Tailwind">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12c1.5-3 3.5-4.5 6-4.5s3.75 1.5 5.25 3 2.625 2.25 4.5 2.25S21 12 22 10.5"/><path d="M3 18c1.5-3 3.5-4.5 6-4.5s3.75 1.5 5.25 3 2.625 2.25 4.5 2.25S21 18 22 16.5"/></svg>
+              </span>
+              <span class="planet-label">Tailwind</span>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="tech-grid">
-        <div class="tech-item" data-name="React">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
-          </div>
+
+        <div class="orbit orbit-2" style="--orbit-speed: 90s;">
+          <div class="orbit-line"></div>
+          <ul class="planets">
+            <li class="planet" style="--i:0;--n:5;--planet-color:#86efac;" data-name="Node.js">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M9 14c0 1.5 1 2 2 2s2-.5 2-2V9M14 9.5c0 0-.5-.5-1.5-.5s-2 .5-2 1.5c0 1.5 4 1 4 2.5 0 .8-.7 1.5-2 1.5s-2-.7-2-1.5"/></svg>
+              </span>
+              <span class="planet-label">Node.js</span>
+            </li>
+            <li class="planet" style="--i:1;--n:5;--planet-color:#fde68a;" data-name="Python">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2c-3 0-5 1-5 4v3h6v1H6c-2 0-4 1.5-4 4.5S4 19 6 19h2v-3.5C8 13 9.5 12 12 12h4c2 0 4-1 4-3.5V6c0-3-2-4-5-4h-3z"/><circle cx="9.5" cy="5.5" r=".7" fill="currentColor"/><path d="M12 22c3 0 5-1 5-4v-3h-6v-1h7c2 0 4-1.5 4-4.5"/><circle cx="14.5" cy="18.5" r=".7" fill="currentColor"/></svg>
+              </span>
+              <span class="planet-label">Python</span>
+            </li>
+            <li class="planet planet-lg" style="--i:2;--n:5;--planet-color:#c084fc;" data-name="C#">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/><path d="M14 9.5a3.5 3.5 0 100 5M16 9v3M18 9v3M15 10.5h4M15 11.5h4"/></svg>
+              </span>
+              <span class="planet-label">C#</span>
+            </li>
+            <li class="planet" style="--i:3;--n:5;--planet-color:#fb923c;" data-name="Java">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18c0 1.5 1.5 2.5 3 2.5s3-1 3-2.5"/><path d="M7 14c-1.5.5-3 1.5-3 3 0 2 3 3 8 3s8-1 8-3c0-1-.7-2-2-2.5"/><path d="M9 11c-1 .5-1.5 1-1.5 1.8M12 3s2 2 2 4-3 3-3 5 2 3 2 3"/></svg>
+              </span>
+              <span class="planet-label">Java</span>
+            </li>
+            <li class="planet" style="--i:4;--n:5;--planet-color:#a5b4fc;" data-name="PHP">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="12" cy="12" rx="10" ry="6"/><path d="M6 9.5l-1 5h2l.3-1.5h1.2c1.2 0 2-.7 2-1.7s-.5-1.8-1.8-1.8H6zM11 8l-1.3 6.5h1.5l.4-2h2c1.2 0 2-.7 2-1.7s-.5-1.8-1.8-1.8h-2zM17 9.5l-1 5h2l.3-1.5h1.2c1.2 0 2-.7 2-1.7s-.5-1.8-1.8-1.8H17z"/></svg>
+              </span>
+              <span class="planet-label">PHP</span>
+            </li>
+          </ul>
         </div>
-        <div class="tech-item" data-name="Node.js">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M12 22V12M3 7l9 5M21 7l-9 5"/></svg>
-          </div>
+
+        <div class="orbit orbit-3" style="--orbit-speed: 140s;">
+          <div class="orbit-line"></div>
+          <ul class="planets">
+            <li class="planet" style="--i:0;--n:6;--planet-color:#7dd3fc;" data-name="PostgreSQL">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+              </span>
+              <span class="planet-label">PostgreSQL</span>
+            </li>
+            <li class="planet" style="--i:1;--n:6;--planet-color:#4ade80;" data-name="MongoDB">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2c0 0-4 4-4 10s4 10 4 10c0 0 4-4 4-10S12 2 12 2z"/><path d="M12 2v20"/></svg>
+              </span>
+              <span class="planet-label">MongoDB</span>
+            </li>
+            <li class="planet" style="--i:2;--n:6;--planet-color:#22d3ee;" data-name="Docker">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 14c0 0 1 4 6 4s8-2 10-4c0 0 1-2 0-3-1-1-2 0-2 0"/><rect x="5" y="9" width="3" height="3"/><rect x="9" y="9" width="3" height="3"/><rect x="13" y="9" width="3" height="3"/><rect x="9" y="5" width="3" height="3"/><rect x="13" y="5" width="3" height="3"/></svg>
+              </span>
+              <span class="planet-label">Docker</span>
+            </li>
+            <li class="planet planet-lg" style="--i:3;--n:6;--planet-color:#fbbf24;" data-name="AWS">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 16c2 2 5 3 8 3s6-1 8-3"/><path d="M6 12l2.5 5L11 9l2 8 2.5-5L18 12"/><path d="M6 18l-1 1M19 18l1 1"/></svg>
+              </span>
+              <span class="planet-label">AWS</span>
+            </li>
+            <li class="planet" style="--i:4;--n:6;--planet-color:#fb7185;" data-name="Git">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9.5 9.5L7.5 7.5M14.5 14.5l2 2"/></svg>
+              </span>
+              <span class="planet-label">Git</span>
+            </li>
+            <li class="planet" style="--i:5;--n:6;--planet-color:#d8b4fe;" data-name="Figma">
+              <span class="planet-body" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="2" width="6" height="6" rx="3"/><rect x="12" y="2" width="6" height="6" rx="3"/><rect x="6" y="9" width="6" height="6" rx="3"/><circle cx="15" cy="12" r="3"/><rect x="6" y="16" width="6" height="6" rx="3"/></svg>
+              </span>
+              <span class="planet-label">Figma</span>
+            </li>
+          </ul>
         </div>
-        <div class="tech-item" data-name="Python">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2C6.5 2 6 4.5 6 6v2h6v1H5C3 9 2 11 2 13.5S3.5 19 5 19h2v-2.5C7 14 9 13 11 13h4c2 0 3-1 3-3V6c0-2-1.5-4-6-4zm-2 2.5a1 1 0 110 2 1 1 0 010-2z"/><path d="M12 22c5.5 0 6-2.5 6-4v-2h-6v-1h7c2 0 3-2 3-4.5S20.5 5 19 5h-2v2.5c0 2.5-2 3.5-4 3.5h-4c-2 0-3 1-3 3v4c0 2 1.5 4 6 4zm2-2.5a1 1 0 110-2 1 1 0 010 2z"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="TypeScript">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M15 11v1.5c0 0 0-1.5 2-1.5s2 1.5 2 1.5v2c0 0 0 1.5-2 1.5s-2-1.5-2-1.5"/><path d="M5 11h5M7.5 11v5"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="Next.js">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><path d="M8 8l8 10M16 8v8"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="Vue.js">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 3h4l6 10L18 3h4L12 21 2 3z"/><path d="M7.5 3L12 10.5 16.5 3"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="Docker">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 14c0 0 1 4 6 4s8-2 10-4c0 0 1-2 0-3-1-1-2 0-2 0"/><rect x="5" y="9" width="3" height="3"/><rect x="9" y="9" width="3" height="3"/><rect x="13" y="9" width="3" height="3"/><rect x="9" y="5" width="3" height="3"/><rect x="13" y="5" width="3" height="3"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="AWS">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 16c0 0 3 3 8 3s8-3 8-3"/><path d="M6 12l3 6 3-8 3 8 3-6"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="MongoDB">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2c0 0-4 4-4 10s4 10 4 10c0 0 4-4 4-10S12 2 12 2z"/><path d="M12 2v20"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="PostgreSQL">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="Figma">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="6" y="2" width="6" height="6" rx="3"/><rect x="12" y="2" width="6" height="6" rx="3"/><rect x="6" y="9" width="6" height="6" rx="3"/><circle cx="15" cy="12" r="3"/><rect x="6" y="16" width="6" height="6" rx="3"/></svg>
-          </div>
-        </div>
-        <div class="tech-item" data-name="Git">
-          <div class="tech-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9.5 9.5L7.5 7.5M14.5 14.5l2 2"/></svg>
-          </div>
-        </div>
+
+        <span class="comet comet-1" aria-hidden="true"></span>
+        <span class="comet comet-2" aria-hidden="true"></span>
       </div>
     </div>
   </section>
 
   <!-- PROCESS -->
-  <section class="section section-dark" id="proceso">
+  <section class="section" id="proceso" aria-labelledby="proceso-title">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Proceso</span>
-        <h2 class="section-title">Cómo <span class="gradient-text">trabajamos</span></h2>
+        <h2 class="section-title" id="proceso-title">Cómo <span class="gradient-text">trabajamos</span></h2>
         <p class="section-subtitle">Un proceso claro y transparente de principio a fin</p>
       </div>
-      <div class="process-timeline">
-        <div class="process-step">
+      <ol class="process-timeline">
+        <li class="process-step">
           <div class="step-number">01</div>
           <div class="step-content">
             <h3>Descubrimiento</h3>
             <p>Analizamos tu idea, objetivos y audiencia. Definimos el alcance, funcionalidades y roadmap del proyecto.</p>
           </div>
-        </div>
-        <div class="process-step">
+        </li>
+        <li class="process-step">
           <div class="step-number">02</div>
           <div class="step-content">
             <h3>Diseño</h3>
             <p>Creamos wireframes y diseño UI/UX. Iteramos contigo hasta lograr la experiencia visual perfecta.</p>
           </div>
-        </div>
-        <div class="process-step">
+        </li>
+        <li class="process-step">
           <div class="step-number">03</div>
           <div class="step-content">
             <h3>Desarrollo</h3>
             <p>Código limpio, modular y escalable. Sprints con entregas parciales para que veas el avance en tiempo real.</p>
           </div>
-        </div>
-        <div class="process-step">
+        </li>
+        <li class="process-step">
           <div class="step-number">04</div>
           <div class="step-content">
             <h3>Lanzamiento</h3>
             <p>Testing exhaustivo, optimización de performance y deploy. Soporte post-lanzamiento incluido.</p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="section" id="sobre">
+  <section class="section section-dark" id="sobre" aria-labelledby="sobre-title">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Nosotros</span>
-        <h2 class="section-title">Sobre <span class="gradient-text">GanymeDEV</span></h2>
+        <h2 class="section-title" id="sobre-title">Sobre <span class="gradient-text">GanymeDEV</span></h2>
       </div>
       <div class="about-layout">
         <div class="about-text-block">
@@ -466,50 +481,56 @@
           <p>Trabajamos con startups, empresas y emprendedores que buscan un partner tecnológico comprometido con la calidad y los resultados.</p>
         </div>
         <div class="about-values">
-          <div class="value-card">
-            <div class="value-icon">
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <h4>Rendimiento</h4>
-            <p>Código optimizado, carga rápida, experiencia fluida.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
+            <div>
+              <h4>Rendimiento</h4>
+              <p>Código optimizado, carga rápida, experiencia fluida.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
             </div>
-            <h4>Puntualidad</h4>
-            <p>Deadlines cumplidos. Sprints organizados. Sin sorpresas.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
+            <div>
+              <h4>Puntualidad</h4>
+              <p>Deadlines cumplidos. Sprints organizados. Sin sorpresas.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a5 5 0 015 5c0 2-1 3-2 4l-1 1v2h-4v-2l-1-1c-1-1-2-2-2-4a5 5 0 015-5zM9 18h6M10 22h4"/></svg>
             </div>
-            <h4>Innovación</h4>
-            <p>Tecnologías actuales, soluciones creativas, visión de futuro.</p>
-          </div>
+            <div>
+              <h4>Innovación</h4>
+              <p>Tecnologías actuales, soluciones creativas, visión de futuro.</p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section section-dark" id="contacto">
+  <section class="section" id="contacto" aria-labelledby="contacto-title">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Contacto</span>
-        <h2 class="section-title">Hablemos de tu <span class="gradient-text">proyecto</span></h2>
+        <h2 class="section-title" id="contacto-title">Hablemos de tu <span class="gradient-text">proyecto</span></h2>
         <p class="section-subtitle">Escribinos y te respondemos en menos de 24 horas</p>
       </div>
       <div class="contact-layout">
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="contact-name">Nombre</label>
-              <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required>
+              <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required autocomplete="name">
             </div>
             <div class="form-group">
               <label for="contact-email">Email</label>
-              <input type="email" id="contact-email" name="email" placeholder="tu@email.com" required>
+              <input type="email" id="contact-email" name="email" placeholder="tu@email.com" required autocomplete="email">
             </div>
           </div>
           <div class="form-group">
@@ -528,35 +549,37 @@
           </div>
           <button type="submit" class="btn btn-primary btn-full">
             <span>Enviar Mensaje</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           </button>
         </form>
-        <div class="contact-aside">
+        <aside class="contact-aside" aria-label="Datos de contacto">
           <div class="contact-card">
-            <div class="contact-card-icon">
+            <div class="contact-card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
             </div>
             <h4>Email</h4>
             <a href="mailto:ganymedev.sdk@gmail.com">ganymedev.sdk@gmail.com</a>
           </div>
           <div class="contact-card">
-            <div class="contact-card-icon">
+            <div class="contact-card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
             </div>
             <h4>GitHub</h4>
             <a href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer">github.com/ganymedevsdk</a>
           </div>
           <div class="contact-card">
-            <div class="contact-card-icon">
+            <div class="contact-card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
             </div>
             <h4>Web</h4>
             <span>ganymedevsdk.github.io</span>
           </div>
-        </div>
+        </aside>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -587,10 +610,10 @@
         <p>&copy; 2026 GanymeDEV. Todos los derechos reservados.</p>
         <div class="footer-social">
           <a href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           </a>
           <a href="mailto:ganymedev.sdk@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
           </a>
         </div>
       </div>
