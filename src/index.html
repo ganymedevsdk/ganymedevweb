@@ -74,37 +74,54 @@
 
   <!-- HERO -->
   <section class="hero" id="hero" aria-label="Presentación">
-    <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="hero-orbs" aria-hidden="true">
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
     </div>
-    <div class="hero-grid-bg" aria-hidden="true"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot" aria-hidden="true"></span>
-        Disponible para nuevos proyectos
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Disponible para nuevos proyectos
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-line">Software</span>
+          <span class="hero-line gradient-text">bien construido.</span>
+          <span class="hero-line">Sin atajos.</span>
+        </h1>
+        <p class="hero-desc">Estudio de desarrollo web y software. Transformamos ideas en productos digitales que destacan por su diseño, rendimiento y experiencia de usuario.</p>
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary">
+            <span>Ver Portfolio</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn-outline">Iniciar Proyecto</a>
+        </div>
       </div>
-      <h1 class="hero-title">
-        <span class="hero-line">Software</span>
-        <span class="hero-line gradient-text">bien construido.</span>
-        <span class="hero-line">Sin atajos.</span>
-      </h1>
-      <p class="hero-typed" id="heroTyped" aria-live="polite"></p>
-      <p class="hero-desc">Estudio de desarrollo web y software. Transformamos ideas en productos digitales que destacan por su diseño, rendimiento y experiencia de usuario.</p>
-      <div class="hero-buttons">
-        <a href="#portfolio" class="btn btn-primary">
-          <span>Ver Portfolio</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#contacto" class="btn btn-outline">Iniciar Proyecto</a>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-inner">
+          <div class="hero-visual-orb"></div>
+          <div class="hero-visual-grid"></div>
+          <div class="hero-visual-rings">
+            <span class="hvr hvr-1"></span>
+            <span class="hvr hvr-2"></span>
+            <span class="hvr hvr-3"></span>
+          </div>
+          <div class="hero-visual-badge">
+            <span class="hvb-dot"></span>
+            <span class="hvb-text">Full Stack</span>
+          </div>
+          <div class="hero-visual-badge hvb-bottom">
+            <span class="hvb-dot hvb-dot-purple"></span>
+            <span class="hvb-text">+ 50 proyectos</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="hero-scroll" aria-hidden="true">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
       <span>Scroll</span>
     </div>
   </section>
