@@ -60,7 +60,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # === Temporal ===
+.playwright-mcp/
 tmp/
+vercel-auth-page.md
+
+# === Design tool artifacts ===
+.stitch/
 temp/
 *.tmp
 *.bak
@@ -69,3 +74,4 @@ temp/
 # === Misc ===
 .sass-cache/
 *.map
+.vercel

@@ -1,125 +1,104 @@
-import Lenis from 'lenis';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initScrambleReveal, bindScrambleHover } from './scramble.js';
 
-gsap.registerPlugin(ScrollTrigger);
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ── SMOOTH SCROLL ─────────────────────────────────────────────────────
-const lenis = new Lenis({ lerp: 0.08, smooth: true });
+/* ── nav: stuck state + mobile toggle + active link ─────────────────── */
+(function nav() {
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
 
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => lenis.raf(time * 1000));
-gsap.ticker.lagSmoothing(0);
+  const onScroll = () => nav?.classList.toggle('is-stuck', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-// ── NAVBAR ────────────────────────────────────────────────────────────
-(function initNav() {
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (!navToggle || !navLinks) return;
-
-  navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
     });
-  });
-
-  const sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY + 100;
-    sections.forEach(s => {
-      const link = navLinks.querySelector(`a[href="#${s.id}"]`);
-      if (link) link.classList.toggle('active', y >= s.offsetTop && y < s.offsetTop + s.offsetHeight);
-    });
-  }, { passive: true });
-})();
-
-// ── SCROLL REVEAL ─────────────────────────────────────────────────────
-(function initReveal() {
-  const els = document.querySelectorAll('[data-reveal]');
-  if (!els.length) return;
-
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (reduced) {
-    els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
-    return;
+    menu.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
   }
 
-  gsap.set(els, { opacity: 0, y: 20 });
+  const sections = [...document.querySelectorAll('section[id]')];
+  const links = [...document.querySelectorAll('.nav__link')];
+  if (sections.length && links.length) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY + 120;
+      let current = '';
+      sections.forEach((s) => { if (y >= s.offsetTop) current = s.id; });
+      links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === `#${current}`));
+    }, { passive: true });
+  }
+})();
 
-  els.forEach((el, i) => {
-    const siblings = Array.from(el.parentElement?.children ?? []);
-    const delay = siblings.indexOf(el) * 0.1;
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 88%',
-      onEnter: () => gsap.to(el, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay }),
-      once: true,
+/* ── scroll reveal (IntersectionObserver, no GSAP needed) ───────────── */
+(function reveal() {
+  const els = document.querySelectorAll('[data-reveal]');
+  if (!els.length) return;
+  if (REDUCED) { els.forEach((el) => el.classList.add('is-revealed')); return; }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-revealed');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+  els.forEach((el) => io.observe(el));
+})();
+
+/* ── scramble: reveal-on-scroll + hover on work rows ────────────────── */
+initScrambleReveal();
+document.querySelectorAll('[data-scramble-hover]').forEach(bindScrambleHover);
+
+/* ── work rows: floating thumbnail preview ──────────────────────────── */
+(function workThumb() {
+  const rows = document.querySelectorAll('.work__row[data-thumb]');
+  if (!rows.length || window.matchMedia('(hover: none)').matches) return;
+
+  const thumb = document.createElement('div');
+  thumb.className = 'work__thumb';
+  const img = document.createElement('img');
+  thumb.appendChild(img);
+  document.body.appendChild(thumb);
+
+  let raf = 0, tx = 0, ty = 0;
+  const render = () => {
+    thumb.style.transform = `translate(${tx}px, ${ty}px) translate(-50%, -50%) scale(${thumb.classList.contains('is-on') ? 1 : 0.94})`;
+    raf = 0;
+  };
+
+  rows.forEach((row) => {
+    row.addEventListener('mouseenter', () => {
+      img.src = row.dataset.thumb;
+      thumb.classList.add('is-on');
+    });
+    row.addEventListener('mouseleave', () => thumb.classList.remove('is-on'));
+    row.addEventListener('mousemove', (e) => {
+      tx = e.clientX + 28; ty = e.clientY;
+      if (!raf) raf = requestAnimationFrame(render);
     });
   });
 })();
 
-// ── HERO MOUSE PARALLAX ───────────────────────────────────────────────
-(function initParallax() {
-  const card = document.querySelector('.hero-visual');
-  if (!card || window.innerWidth < 1024) return;
-
-  document.addEventListener('mousemove', (e) => {
-    const x = (window.innerWidth  / 2 - e.clientX) / 60;
-    const y = (window.innerHeight / 2 - e.clientY) / 60;
-    gsap.to(card, { x, y, duration: 1, ease: 'power1.out' });
-  });
-})();
-
-// ── PORTFOLIO SCREENSHOT CAROUSEL ─────────────────────────────────────
-(function initCarousels() {
-  const carousels = document.querySelectorAll('.portfolio-screenshots');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  carousels.forEach(wrap => {
-    const imgs = wrap.querySelectorAll('img');
-    if (imgs.length < 2 || reduced) return;
-
-    let idx = 0;
-    let timer = null;
-
-    function next() {
-      imgs[idx].classList.remove('active');
-      idx = (idx + 1) % imgs.length;
-      imgs[idx].classList.add('active');
-    }
-
-    function start(ms = 3200) { timer = setInterval(next, ms); }
-    function stop() { clearInterval(timer); }
-
-    const io = new IntersectionObserver(([e]) => {
-      e.isIntersecting ? start() : stop();
-    }, { threshold: 0.3 });
-    io.observe(wrap);
-
-    wrap.closest('article')?.addEventListener('mouseenter', () => { stop(); start(1600); });
-    wrap.closest('article')?.addEventListener('mouseleave', () => { stop(); start(3200); });
-  });
-})();
-
-// ── CONTACT FORM ──────────────────────────────────────────────────────
-(function initForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
+/* ── contact form → mailto ──────────────────────────────────────────── */
+(function form() {
+  const f = document.getElementById('contactForm');
+  if (!f) return;
+  f.addEventListener('submit', (e) => {
     e.preventDefault();
-    const d = new FormData(form);
-    const subj = encodeURIComponent(`[${d.get('subject')}] Contacto desde GanymeDEV — ${d.get('name')}`);
-    const body = encodeURIComponent(`Nombre: ${d.get('name')}\nEmail: ${d.get('email')}\nServicio: ${d.get('subject')}\n\n${d.get('message')}`);
-    window.location.href = `mailto:ganymedev.sdk@gmail.com?subject=${subj}&body=${body}`;
+    const d = new FormData(f);
+    const subject = encodeURIComponent(`[${d.get('subject') || 'Contacto'}] ${d.get('name')} — GANYMEDEV`);
+    const body = encodeURIComponent(
+      `Nombre: ${d.get('name')}\nEmail: ${d.get('email')}\nServicio: ${d.get('subject')}\n\n${d.get('message')}`
+    );
+    window.location.href = `mailto:ganymedev.sdk@gmail.com?subject=${subject}&body=${body}`;
   });
 })();

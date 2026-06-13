@@ -1,394 +1,311 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GanymeDEV · Software Boutique</title>
-  <meta name="description" content="GanymeDEV — Estudio boutique de ingeniería de software. Fusionamos computación de alto rendimiento con diseño artesanal para crear ecosistemas escalables. Argentina.">
-  <meta name="keywords" content="desarrollo web, software a medida, ingeniería de software, GanymeDEV, React, Node.js, Argentina">
-  <meta name="theme-color" content="#050505">
-  <meta name="author" content="GanymeDEV">
+  <title>GANYMEDEV · Software Studio</title>
+  <meta name="description" content="GANYMEDEV — Estudio de ingeniería de software. Construimos sistemas de alto rendimiento con criterio artesanal. Web, móvil, IA e infraestructura. Argentina.">
+  <meta name="keywords" content="desarrollo de software, ingeniería de software, GANYMEDEV, React, Next.js, IA, Argentina, portfolio">
+  <meta name="theme-color" content="#07090c">
+  <meta name="author" content="GANYMEDEV">
   <link rel="canonical" href="https://ganymedev.vercel.app/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:site_name" content="GanymeDEV">
-  <meta property="og:title" content="GanymeDEV · Software Boutique">
-  <meta property="og:description" content="Estudio boutique de ingeniería de software. Alto rendimiento, diseño artesanal.">
+  <meta property="og:site_name" content="GANYMEDEV">
+  <meta property="og:title" content="GANYMEDEV · Software Studio">
+  <meta property="og:description" content="Estudio de ingeniería de software. Sistemas de alto rendimiento, construidos sin atajos.">
   <meta property="og:url" content="https://ganymedev.vercel.app/">
   <meta property="og:image" content="https://ganymedev.vercel.app/img/logos/logo.png">
-
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GanymeDEV · Software Boutique">
-  <meta name="twitter:description" content="Ingeniería de software de alto rendimiento con diseño artesanal.">
+  <meta name="twitter:title" content="GANYMEDEV · Software Studio">
+  <meta name="twitter:description" content="Ingeniería de software de alto rendimiento, construida sin atajos.">
   <meta name="twitter:image" content="https://ganymedev.vercel.app/img/logos/logo.png">
 
-  <link rel="icon" type="image/png" href="/img/logos/logo.png">
-  <link rel="alternate icon" type="image/png" href="/img/logos/logo.png">
-
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/css/main.css">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "GanymeDEV",
+    "name": "GANYMEDEV",
     "url": "https://ganymedev.vercel.app/",
     "logo": "https://ganymedev.vercel.app/img/logos/logo.png",
     "email": "ganymedev.sdk@gmail.com",
     "sameAs": ["https://github.com/ganymedevsdk"],
     "areaServed": "AR",
-    "description": "Estudio boutique de ingeniería de software."
+    "description": "Estudio de ingeniería de software de alto rendimiento."
   }
   </script>
 </head>
 <body>
-  <!-- ambient glows -->
-  <div class="glow-top" aria-hidden="true"></div>
-  <div class="glow-bottom" aria-hidden="true"></div>
+  <div class="atmos" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar" role="banner">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-brand" aria-label="GanymeDEV — inicio">
-        <div class="logo-circle">
-          <img src="/img/logos/logo.png" alt="" width="40" height="40">
-        </div>
-        <span class="nav-brand-text">GANYME<span style="color:var(--neon)">DEV</span></span>
-      </a>
-
-      <nav class="nav-links" id="navLinks" aria-label="Principal">
-        <a href="#services" class="nav-link">Servicios</a>
-        <a href="#portfolio" class="nav-link">Portafolio</a>
-        <a href="#about" class="nav-link">Nosotros</a>
-        <a href="#contact" class="nav-link">Contacto</a>
-        <a href="#contact" class="nav-cta">Contratar</a>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="brand spin" aria-label="GANYMEDEV — inicio">GANYME<span class="dot" aria-hidden="true"></span><span class="accent">DEV</span></a>
+      <nav class="nav__menu" id="navMenu" aria-label="Principal">
+        <a class="nav__link" href="#services">servicios</a>
+        <a class="nav__link" href="#work">work</a>
+        <a class="nav__link" href="#about">estudio</a>
+        <a class="nav__link" href="#contact">contacto</a>
+        <a class="btn nav__cta" href="#contact">Iniciar proyecto</a>
       </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="shell">
+    <span id="top"></span>
 
-  <!-- HERO -->
-  <section class="hero" id="hero" aria-label="Presentación">
-    <div class="hero-inner">
-      <div class="hero-content" data-reveal>
-        <div class="hero-badge">SYSTEM_ONLINE // V2.4.0</div>
-        <h1 class="hero-title">
-          Construimos el futuro,<br>un <em>deploy</em> a la vez
+    <!-- HERO -->
+    <section class="hero wrap" aria-label="Presentación">
+      <div class="hero__inner">
+        <div class="hero__status">
+          <span class="pulse" aria-hidden="true"></span>
+          <span data-scramble="SYSTEM ONLINE — BUENOS AIRES // AR">SYSTEM ONLINE — BUENOS AIRES // AR</span>
+        </div>
+
+        <h1 class="display hero__title">
+          <span class="row" data-scramble="Construimos software" data-scramble-delay="0.1">Construimos software</span>
+          <span class="row hi" data-scramble="de alto rendimiento." data-scramble-delay="0.35">de alto rendimiento.</span>
+          <span class="row lo" data-scramble="Sin atajos." data-scramble-delay="0.65">Sin atajos.</span>
         </h1>
-        <p class="hero-desc">
-          Un estudio boutique de ingeniería de software. Fusionamos computación de alto rendimiento con diseño artesanal para crear ecosistemas escalables e inteligentes para innovadores exigentes.
+
+        <p class="lede hero__lede">
+          GANYMEDEV es un estudio de ingeniería de software. Diseñamos y construimos
+          sistemas escalables — web, móvil, IA e infraestructura — con la precisión
+          de algo hecho a mano y la solidez de algo pensado para durar.
         </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-neon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.5-1.8 3.5-.9 5.1M12 2a7 7 0 017 7c0 3.5-2 5.5-4 7l-1 1v3H10v-3l-1-1c-2-1.5-4-3.5-4-7a7 7 0 017-7z"/></svg>
-            INICIAR_PROYECTO
+
+        <div class="hero__actions">
+          <a href="#contact" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            Iniciar proyecto
           </a>
-          <a href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            VER_CÓDIGO
-          </a>
+          <a href="#work" class="btn btn--ghost">Ver el trabajo</a>
+        </div>
+
+        <div class="hero__meta">
+          <div class="cell"><span class="k">Entregados</span><span class="v green">50+</span></div>
+          <div class="cell"><span class="k">Uptime</span><span class="v">99.99%</span></div>
+          <div class="cell"><span class="k">Foco</span><span class="v">Web · IA · Cloud</span></div>
+          <div class="cell"><span class="k">Base</span><span class="v">Buenos Aires</span></div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-visual-glow"></div>
-        <div class="hero-logo">
-          <img src="/img/logos/logo.png" alt="GanymeDEV Logo" width="380" height="380">
+    <!-- SERVICES -->
+    <section class="section wrap" id="services" aria-labelledby="services-title">
+      <div class="section__head">
+        <span class="kicker">[ 01 ] Capacidades</span>
+        <h2 class="h2" id="services-title" data-scramble="Lo que construimos">Lo que construimos</h2>
+        <p class="lede">Cuatro disciplinas, un mismo estándar: arquitectura limpia, performance medible y deploys en los que se puede confiar.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc__row">
+          <span class="svc__num">01</span>
+          <h3 class="svc__name">Arquitectura Web</h3>
+          <p class="svc__desc">Aplicaciones escalables y responsivas, distribuidas globalmente. Render performante y estado predecible desde el primer commit.</p>
+          <div class="svc__tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node</span></div>
         </div>
-        <div class="tech-readout top-right">
-          <span>COORD: 34.6°S / 58.4°W</span>
+        <div class="svc__row">
+          <span class="svc__num">02</span>
+          <h3 class="svc__name">Ecosistemas Móviles</h3>
+          <p class="svc__desc">Experiencias nativas y multiplataforma que se sienten integradas al hardware. De Flutter a Swift, sin compromisos de fluidez.</p>
+          <div class="svc__tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Swift</span></div>
         </div>
-        <div class="tech-readout bottom-left">
-          <span>LATENCIA: 12ms</span>
+        <div class="svc__row">
+          <span class="svc__num">03</span>
+          <h3 class="svc__name">IA & Machine Learning</h3>
+          <p class="svc__desc">Modelos predictivos e IA generativa integrados al flujo real del producto. Pipelines de datos serios, no demos.</p>
+          <div class="svc__tags"><span class="tag">Python</span><span class="tag">LLMs</span><span class="tag">RAG</span></div>
+        </div>
+        <div class="svc__row">
+          <span class="svc__num">04</span>
+          <h3 class="svc__name">Infraestructura Cloud</h3>
+          <p class="svc__desc">Backends resilientes y auto-escalables para alta disponibilidad y baja latencia. Cada pieza en su lugar correcto.</p>
+          <div class="svc__tags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">K8s</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section class="section" id="services" aria-labelledby="services-title">
-    <div class="container">
-      <span class="section-label">Capacidades</span>
-      <h2 class="section-title" id="services-title">Capacidades Centrales</h2>
-      <div class="section-divider"></div>
-
-      <div class="services-grid">
-        <article class="glass service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-          </div>
-          <h3>Arquitectura Web</h3>
-          <p>Aplicaciones web escalables, responsivas y distribuidas globalmente. Priorizamos el rendimiento de renderizado y la gestión fluida del estado desde el primer commit.</p>
-          <div class="service-tags">
-            <span>REACT</span><span>NEXT.JS</span><span>NODE.JS</span>
-          </div>
-        </article>
-
-        <article class="glass service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-          </div>
-          <h3>Ecosistemas Móviles</h3>
-          <p>Experiencias móviles nativas y multiplataforma que se sienten fluidas e integradas. De Flutter a Swift, construimos para el hardware del usuario.</p>
-          <div class="service-tags">
-            <span>FLUTTER</span><span>DART</span><span>SWIFT</span>
-          </div>
-        </article>
-
-        <article class="glass service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <h3>IA y Machine Learning</h3>
-          <p>Integración de modelos predictivos e IA generativa en los flujos de tu producto. Plataformas inteligentes y auto-optimizadas con pipelines de datos de clase mundial.</p>
-          <div class="service-tags">
-            <span>PYTHON</span><span>LLMs</span><span>APIs</span>
-          </div>
-        </article>
-
-        <article class="glass service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-          </div>
-          <h3>Infraestructura Cloud</h3>
-          <p>Sistemas backend resilientes y de auto-escalado diseñados para alta disponibilidad y baja latencia. AWS, Docker, Kubernetes — cada pieza en su lugar correcto.</p>
-          <div class="service-tags">
-            <span>AWS</span><span>DOCKER</span><span>KUBERNETES</span>
-          </div>
-        </article>
+    <!-- MY WORK -->
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="section__head">
+        <span class="kicker">[ 02 ] My Work</span>
+        <h2 class="h2" id="work-title" data-scramble="Sistemas desplegados">Sistemas desplegados</h2>
+        <p class="lede">Software en producción y proyectos open source. Pasá el cursor para decodificar.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- PORTFOLIO -->
-  <section class="section" id="portfolio" aria-labelledby="portfolio-title">
-    <div class="container">
-      <span class="section-label">Portfolio</span>
-      <h2 class="section-title" id="portfolio-title">Sistemas Desplegados</h2>
-      <div class="section-divider"></div>
+      <div class="work">
+        <a class="work__row" href="/work/kroneker.html" data-scramble-hover-target data-thumb="/img/portfolio/kroneker-shot-1.jpg">
+          <span class="work__num">001</span>
+          <span class="work__main">
+            <span class="work__name" data-scramble-hover>Kroneker</span>
+            <span class="work__sub"><span class="live">En vivo</span><span>Construcción · Real Estate</span><span>2025</span></span>
+          </span>
+          <span class="work__arrow" aria-hidden="true">↗</span>
+        </a>
 
-      <div class="portfolio-grid">
+        <a class="work__row" href="/work/nextlevel.html" data-scramble-hover-target data-thumb="/img/portfolio/nextlevel-shot-1.jpg">
+          <span class="work__num">002</span>
+          <span class="work__main">
+            <span class="work__name" data-scramble-hover>NextLevel CCTV</span>
+            <span class="work__sub"><span class="live">En vivo</span><span>Seguridad · SPA</span><span>2025</span></span>
+          </span>
+          <span class="work__arrow" aria-hidden="true">↗</span>
+        </a>
 
-        <!-- Kroneker — client, deployed -->
-        <article class="portfolio-card" data-reveal>
-          <div class="portfolio-status">GANYMEDEVSDK // KRONEKER — EN VIVO</div>
-          <div class="portfolio-screenshots" id="shots-kroneker" aria-label="Capturas de Kroneker">
-            <img src="/img/portfolio/kroneker-shot-1.jpg" alt="Kroneker — landing principal" class="active" loading="lazy">
-            <img src="/img/portfolio/kroneker-shot-2.jpg" alt="Kroneker — especialidades" loading="lazy">
-            <img src="/img/portfolio/kroneker-shot-3.jpg" alt="Kroneker — galería de obras" loading="lazy">
-            <img src="/img/portfolio/kroneker-shot-4.jpg" alt="Kroneker — proyectos" loading="lazy">
-            <img src="/img/portfolio/kroneker-shot-5.jpg" alt="Kroneker — contacto" loading="lazy">
-          </div>
-          <span class="portfolio-tag">GANYMEDEVSDK // KRONEKER</span>
-          <h3>Kroneker</h3>
-          <p>Sitio corporativo para empresa de construcción, agrimensura y bienes raíces en Argentina. Rendimiento, SEO técnico y animaciones optimizadas para conversión.</p>
-          <a class="portfolio-link" href="https://www.kroneker.com.ar/" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-            kroneker.com.ar
-          </a>
-        </article>
+        <a class="work__row" href="/work/nishi.html" data-scramble-hover-target>
+          <span class="work__num">003</span>
+          <span class="work__main">
+            <span class="work__name" data-scramble-hover>Nishi Katakana</span>
+            <span class="work__sub"><span>Open Source</span><span>EdTech · TypeScript</span><span>2024</span></span>
+          </span>
+          <span class="work__arrow" aria-hidden="true">↗</span>
+        </a>
 
-        <!-- NextLevel CCTV — client, deployed -->
-        <article class="portfolio-card portfolio-card-amber" data-reveal>
-          <div class="portfolio-status">GANYMEDEVSDK // NEXTLEVEL — EN VIVO</div>
-          <div class="portfolio-screenshots" id="shots-nextlevel" aria-label="Capturas de NextLevel CCTV">
-            <img src="/img/portfolio/nextlevel-shot-1.jpg" alt="NextLevel CCTV — hero" class="active" loading="lazy">
-            <img src="/img/portfolio/nextlevel-shot-2.jpg" alt="NextLevel CCTV — servicios" loading="lazy">
-            <img src="/img/portfolio/nextlevel-shot-3.jpg" alt="NextLevel CCTV — galería" loading="lazy">
-            <img src="/img/portfolio/nextlevel-shot-4.jpg" alt="NextLevel CCTV — comparador" loading="lazy">
-            <img src="/img/portfolio/nextlevel-shot-5.jpg" alt="NextLevel CCTV — contacto" loading="lazy">
-          </div>
-          <span class="portfolio-tag">GANYMEDEVSDK // NEXTLEVEL</span>
-          <h3>NextLevel CCTV</h3>
-          <p>SPA para empresa de instalación y monitoreo de cámaras de seguridad en Buenos Aires. Galería interactiva, comparador de calidad y formulario de cotización.</p>
-          <a class="portfolio-link" href="https://www.nextlevelcctv.com.ar/" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-            nextlevelcctv.com.ar
-          </a>
-        </article>
-
-        <!-- Nishi Katakana Memotest — open source -->
-        <article class="portfolio-card" data-reveal>
-          <span class="portfolio-tag">GANYMEDEVSDK // NISHI-2</span>
-          <h3>Nishi Katakana Memotest</h3>
-          <p>Memotest de katakana con estética Akira × Sumi-e para la Escuela de Japonés Nishi Nihongo Gakko. TypeScript, animaciones y lógica de progresión de partida.</p>
-          <a class="portfolio-link" href="https://github.com/ganymedevsdk/nishi-katakana-memotest2" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            github.com/ganymedevsdk/nishi-katakana-memotest2
-          </a>
-        </article>
-
-        <!-- Asistente Psiquiatría — open source -->
-        <article class="portfolio-card portfolio-card-amber" data-reveal>
-          <span class="portfolio-tag">GANYMEDEVSDK // PSIQUIATRIA</span>
-          <h3>Asistente Virtual — Consultorio</h3>
-          <p>Asistente virtual con IA para consultorio de psiquiatría. Integración PostgreSQL y lógica de derivación automática de consultas. Diseñado para privacidad y precisión clínica.</p>
-          <a class="portfolio-link" href="https://github.com/ganymedevsdk/asistente-virtual-consultorio-psiquiatria" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            github.com/ganymedevsdk/asistente-virtual-consultorio-psiquiatria
-          </a>
-        </article>
-
+        <a class="work__row" href="/work/psiquiatria.html" data-scramble-hover-target>
+          <span class="work__num">004</span>
+          <span class="work__main">
+            <span class="work__name" data-scramble-hover>Asistente Clínico IA</span>
+            <span class="work__sub"><span>Open Source</span><span>Salud · LLM + PostgreSQL</span><span>2024</span></span>
+          </span>
+          <span class="work__arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about" aria-labelledby="about-title">
-    <div class="container">
-      <span class="section-label">Nosotros</span>
-      <h2 class="section-title" id="about-title">Principios de Ingeniería</h2>
-      <div class="section-divider"></div>
+    <!-- ABOUT -->
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <div class="section__head">
+        <span class="kicker">[ 03 ] El estudio</span>
+        <h2 class="h2" id="about-title" data-scramble="Principios de ingeniería">Principios de ingeniería</h2>
+      </div>
 
-      <div class="about-grid">
-        <div class="about-principles">
-          <article class="glass glass-neon principle-card" data-reveal>
-            <h4>Tolerancia Cero al Exceso</h4>
-            <p>Eliminamos lo innecesario. Cada línea de código debe justificar su existencia en ciclos de CPU y en la experiencia del usuario final.</p>
-          </article>
-          <article class="glass glass-amber principle-card" data-reveal>
-            <h4>Escala Artesanal</h4>
-            <p>Sistemas diseñados para manejar millones de requests manteniendo la sensación de software hecho a mano para cada usuario.</p>
-          </article>
-          <article class="glass glass-neon principle-card" data-reveal>
-            <h4>Sin Atajos</h4>
-            <p>Los fundamentos primero. Diseño limpio, pruebas reales, deploy con confianza. Construimos para durar, no para impresionar en el sprint review.</p>
-          </article>
+      <div class="about">
+        <div class="principles">
+          <div class="principle">
+            <span class="principle__i">/01</span>
+            <div>
+              <h4>Tolerancia cero al exceso</h4>
+              <p>Cada línea de código justifica su existencia: en ciclos de CPU y en la experiencia del usuario. Lo que sobra, se va.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="principle__i">/02</span>
+            <div>
+              <h4>Escala artesanal</h4>
+              <p>Sistemas que manejan millones de requests sin perder la sensación de software hecho a mano para cada persona.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="principle__i">/03</span>
+            <div>
+              <h4>Sin atajos</h4>
+              <p>Fundamentos primero. Diseño limpio, pruebas reales, deploy con confianza. Construimos para durar, no para impresionar en el sprint review.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="about-stats glass" data-reveal aria-label="Estadísticas del estudio">
-          <div class="stat-row">
-            <span class="stat-key">TIEMPO_DE_ACTIVIDAD</span>
-            <span class="stat-neon">99.999%</span>
+        <aside class="readout" aria-label="Métricas del estudio">
+          <div class="readout__bar"><span class="led" aria-hidden="true"></span> ganymedev :: status</div>
+          <div class="readout__body">
+            <div class="readout__row"><span class="k">UPTIME</span><span class="v green">99.999%</span></div>
+            <div class="readout__row"><span class="k">PROYECTOS</span><span class="v">50+</span></div>
+            <div class="readout__row"><span class="k">RESPUESTA_PROM</span><span class="v amber">42ms</span></div>
+            <div class="readout__row"><span class="k">STACK</span><span class="v">TS · PY · GO</span></div>
+            <div class="readout__row"><span class="k">UBICACIÓN</span><span class="v">Buenos Aires, AR</span></div>
+            <div class="readout__row"><span class="k">CAFÉ</span><span class="v green">ERR_OVERFLOW</span></div>
           </div>
-          <div class="stat-row">
-            <span class="stat-key">PROYECTOS_ENTREGADOS</span>
-            <span class="stat-default">50+</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-key">RESPUESTA_PROM</span>
-            <span class="stat-amber">42ms</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-key">UBICACION</span>
-            <span class="stat-default">Buenos Aires, AR</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-key">CAFE_CONSUMIDO</span>
-            <span class="stat-neon">ERR_OVERFLOW</span>
-          </div>
-        </div>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-    <div class="contact-bg-text" aria-hidden="true">INIT</div>
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info" data-reveal>
-          <h2 id="contact-title">Protocolo de Inicio</h2>
-          <p>¿Listo para desplegar tu próxima visión? Abrí un canal seguro con nuestro equipo de ingeniería.</p>
-          <div class="contact-methods">
-            <a href="mailto:ganymedev.sdk@gmail.com" class="contact-method">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+    <!-- CONTACT -->
+    <section class="section wrap" id="contact" aria-labelledby="contact-title">
+      <div class="contact">
+        <div>
+          <span class="kicker">[ 04 ] Contacto</span>
+          <h2 class="h2" id="contact-title" data-scramble="Abrí un canal" style="margin-top:22px">Abrí un canal</h2>
+          <p class="lede" style="margin-top:18px">¿Listo para desplegar tu próxima visión? Contanos qué estás construyendo y respondemos en horas, no en semanas.</p>
+
+          <div class="contact__methods">
+            <a class="contact__method" href="mailto:ganymedev.sdk@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z"/><path d="M22 7l-10 6L2 7"/></svg>
               ganymedev.sdk@gmail.com
             </a>
-            <a href="https://wa.me/5491161349714" target="_blank" rel="noopener noreferrer" class="contact-method method-amber">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.225 1.241-3.664-.236-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp: +54 9 11 6134-9714
+            <a class="contact__method" href="https://wa.me/5491161349714" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.07.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35z"/><path d="M12.05 2C6.5 2 2 6.5 2 12.05c0 1.77.46 3.5 1.34 5.02L2 22l5.05-1.32a10 10 0 005 1.27h.01c5.55 0 10.05-4.5 10.05-10.05A10 10 0 0012.05 2zm0 18.25h-.01a8.26 8.26 0 01-4.2-1.15l-.3-.18-3 .78.8-2.92-.2-.31a8.25 8.25 0 01-1.26-4.4 8.27 8.27 0 0114.12-5.84 8.21 8.21 0 012.43 5.84c0 4.56-3.7 8.18-8.18 8.18z"/></svg>
+              +54 9 11 6134-9714
+            </a>
+            <a class="contact__method" href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              github.com/ganymedevsdk
             </a>
           </div>
         </div>
 
-        <div class="contact-form-wrap glass" data-reveal>
-          <form class="contact-form" id="contactForm" novalidate>
-            <input
-              class="cyber-input"
-              type="text"
-              name="name"
-              placeholder="NOMBRE_ENTIDAD"
-              autocomplete="name"
-              required
-              aria-label="Nombre"
-            >
-            <input
-              class="cyber-input"
-              type="email"
-              name="email"
-              placeholder="CANAL_COMUNICACION (EMAIL)"
-              autocomplete="email"
-              required
-              aria-label="Email"
-            >
-            <select class="cyber-input" name="subject" aria-label="Servicio">
-              <option value="">SELECCIONAR_SERVICIO</option>
-              <option value="web">Arquitectura Web</option>
-              <option value="mobile">Ecosistemas Móviles</option>
-              <option value="ai">IA / Machine Learning</option>
-              <option value="cloud">Infraestructura Cloud</option>
-              <option value="other">Otro</option>
+        <form class="form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="f-name">Entidad</label>
+            <input class="input" id="f-name" type="text" name="name" placeholder="Tu nombre o empresa" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Canal</label>
+            <input class="input" id="f-email" type="email" name="email" placeholder="email@dominio.com" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-subject">Servicio</label>
+            <select class="input" id="f-subject" name="subject" aria-label="Servicio">
+              <option value="">Seleccionar...</option>
+              <option value="Arquitectura Web">Arquitectura Web</option>
+              <option value="Ecosistemas Móviles">Ecosistemas Móviles</option>
+              <option value="IA / Machine Learning">IA / Machine Learning</option>
+              <option value="Infraestructura Cloud">Infraestructura Cloud</option>
+              <option value="Otro">Otro</option>
             </select>
-            <textarea
-              class="cyber-input"
-              name="message"
-              rows="4"
-              placeholder="TRANSMITIR_CARGA (MENSAJE)"
-              required
-              aria-label="Mensaje"
-            ></textarea>
-            <button type="submit" class="btn-neon btn-full">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-              TRANSMITIR
-            </button>
-          </form>
-        </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Mensaje</label>
+            <textarea class="input" id="f-msg" name="message" placeholder="Contanos qué estás construyendo..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Transmitir
+          </button>
+        </form>
       </div>
-    </div>
-  </section>
-
+    </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="logo-circle">
-            <img src="/img/logos/logo.png" alt="" width="40" height="40">
-          </div>
-          <span class="footer-logo-text">GANYME<span style="color:var(--neon)">DEV</span></span>
-        </div>
-        <p class="footer-tagline">© 2026 GANYMEDEV. DISEÑADO PARA EL VACÍO.</p>
+  <footer class="footer wrap" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <span class="brand lg">GANYME<span class="dot" aria-hidden="true"></span><span class="accent">DEV</span></span>
+        <p class="footer__tag">© 2026 GANYMEDEV — Engineering for the void.</p>
       </div>
-      <nav class="footer-links" aria-label="Footer">
+      <nav class="footer__links" aria-label="Enlaces de pie de página">
         <a href="mailto:ganymedev.sdk@gmail.com">ganymedev.sdk@gmail.com</a>
         <a href="https://wa.me/5491161349714" target="_blank" rel="noopener noreferrer">+54 9 11 6134-9714</a>
-        <a href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/ganymedevsdk" target="_blank" rel="noopener noreferrer">github.com/ganymedevsdk</a>
       </nav>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOAT -->
-  <a
-    href="https://wa.me/5491161349714"
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contactar por WhatsApp"
-  >
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.225 1.241-3.664-.236-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+  <a href="https://wa.me/5491161349714" class="float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.07.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35z"/><path d="M12.05 2C6.5 2 2 6.5 2 12.05c0 1.77.46 3.5 1.34 5.02L2 22l5.05-1.32a10 10 0 005 1.27h.01c5.55 0 10.05-4.5 10.05-10.05A10 10 0 0012.05 2zm0 18.25h-.01a8.26 8.26 0 01-4.2-1.15l-.3-.18-3 .78.8-2.92-.2-.31a8.25 8.25 0 01-1.26-4.4 8.27 8.27 0 0114.12-5.84 8.21 8.21 0 012.43 5.84c0 4.56-3.7 8.18-8.18 8.18z"/></svg>
   </a>
 
   <script type="module" src="/js/main.js"></script>
