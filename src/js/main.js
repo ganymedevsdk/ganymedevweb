@@ -1,4 +1,4 @@
-import { initScrambleReveal, bindScrambleHover } from './scramble.js';
+import { initScrambleReveal, bindScrambleHover, TextScramble } from './scramble.js';
 
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -96,8 +96,8 @@ document.querySelectorAll('[data-scramble-hover]').forEach(bindScrambleHover);
   f.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const originalHTML = f.innerHTML;
     const btn = f.querySelector('[type="submit"]');
-    const originalHTML = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = '// Transmitiendo...';
 
@@ -110,19 +110,25 @@ document.querySelectorAll('[data-scramble-hover]').forEach(bindScrambleHover);
 
       if (json.success) {
         f.innerHTML = `<p class="form-success">[ UPLINK ESTABLECIDO ]<br>Mensaje cifrado recibido. Coordenadas registradas.<br>// En ruta. Menos de 24 horas.</p>`;
+
+        await new Promise((r) => setTimeout(r, 5000));
+
+        const successEl = f.querySelector('.form-success');
+        if (successEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          await new TextScramble(successEl).setText('');
+        }
+
+        await new Promise((r) => setTimeout(r, 220));
+        f.innerHTML = originalHTML;
       } else {
         throw new Error(json.message || 'Error desconocido');
       }
     } catch {
-      btn.disabled = false;
-      btn.innerHTML = originalHTML;
-      let errEl = f.querySelector('.form-error');
-      if (!errEl) {
-        errEl = document.createElement('p');
-        errEl.className = 'form-error';
-        f.appendChild(errEl);
-      }
+      f.innerHTML = originalHTML;
+      const errEl = document.createElement('p');
+      errEl.className = 'form-error';
       errEl.textContent = '// Error al transmitir. Intentá de nuevo o escribinos directamente.';
+      f.appendChild(errEl);
     }
   });
 })();

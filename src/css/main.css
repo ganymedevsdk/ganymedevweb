@@ -420,6 +420,14 @@ body {
 }
 .input::placeholder { color: var(--text-faint); }
 .input:focus { border-color: var(--line-yellow); box-shadow: 0 0 0 1px var(--line-yellow), 0 0 22px var(--yellow-glow); }
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px var(--surface) inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+  caret-color: var(--text);
+  transition: background-color 5000s ease-in-out 0s;
+}
 textarea.input { resize: vertical; min-height: 130px; line-height: 1.6; }
 select.input {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F4E409' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");
