@@ -98,6 +98,14 @@ body {
 .shell { position: relative; z-index: 2; }
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
 
+/* anchored targets clear the fixed nav when scrolled to */
+:where(section[id], #main, #top, [id]) { scroll-margin-top: 92px; }
+
+/* keyboard focus — visible green ring, mouse clicks stay clean */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--green); outline-offset: 3px; border-radius: 1px;
+}
+
 .skip-link {
   position: absolute; left: -9999px;
 }
@@ -459,6 +467,10 @@ select.input option { background: var(--surface); color: var(--text); }
 .cs-list li::before { content: '▸'; color: var(--green); font-family: var(--mono); }
 
 .cs-gallery { display: grid; gap: 16px; }
+@media (min-width: 880px) {
+  .cs-gallery { grid-template-columns: 1fr 1fr; }
+  .cs-gallery .cs-shot:first-child { grid-column: 1 / -1; }   /* lead shot full-width */
+}
 .cs-shot { border: 1px solid var(--line); overflow: hidden; background: var(--surface); }
 .cs-shot img { width: 100%; height: auto; }
 .cs-figcap { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--text-faint); text-transform: uppercase; padding: 10px 14px; border-top: 1px solid var(--line); }

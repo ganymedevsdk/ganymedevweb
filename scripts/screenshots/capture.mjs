@@ -18,6 +18,12 @@ const SHOTS = [
     waitMs: 2200,
     scrolls: [0, 0.20, 0.45, 0.70, 0.92],
   },
+  {
+    slug: 'nishischool',
+    url: 'https://nishi-nihongo-gakko.vercel.app/',
+    waitMs: 2400,
+    scrolls: [0, 0.22, 0.45, 0.68, 0.90],
+  },
 ];
 
 const VIEWPORT = { width: 1440, height: 900 };

@@ -12,6 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: r('index.html'),
+        nishiNihongoGakko: r('work/nishi-nihongo-gakko.html'),
         kroneker: r('work/kroneker.html'),
         nextlevel: r('work/nextlevel.html'),
         nishi: r('work/nishi.html'),
