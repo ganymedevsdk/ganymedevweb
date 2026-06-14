@@ -354,7 +354,7 @@ body {
 /* ════════════════════════════════════════════════════════════════════
    ABOUT / PRINCIPLES
    ════════════════════════════════════════════════════════════════════ */
-.about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+.about { display: grid; grid-template-columns: 1fr; gap: clamp(40px, 6vw, 96px); align-items: start; max-width: 720px; }
 .principles { display: flex; flex-direction: column; }
 .principle {
   padding: 30px 0; border-bottom: 1px solid var(--line);
