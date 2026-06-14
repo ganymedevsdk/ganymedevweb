@@ -258,6 +258,11 @@
         </div>
 
         <form class="form" id="contactForm" novalidate>
+          <input type="hidden" name="access_key" value="2cdf9872-c207-4539-8546-0abe7401b873">
+          <input type="hidden" name="subject" value="Nuevo mensaje desde GANYMEDEV">
+          <input type="hidden" name="from_name" value="GANYMEDEV Portfolio">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
           <div class="field">
             <label for="f-name">Entidad</label>
             <input class="input" id="f-name" type="text" name="name" placeholder="Tu nombre o empresa" autocomplete="name" required>
@@ -268,7 +273,7 @@
           </div>
           <div class="field">
             <label for="f-subject">Servicio</label>
-            <select class="input" id="f-subject" name="subject" aria-label="Servicio">
+            <select class="input" id="f-subject" name="service" aria-label="Servicio">
               <option value="">Seleccionar...</option>
               <option value="Arquitectura Web">Arquitectura Web</option>
               <option value="Ecosistemas Móviles">Ecosistemas Móviles</option>

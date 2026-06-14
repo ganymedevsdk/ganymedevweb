@@ -88,17 +88,41 @@ document.querySelectorAll('[data-scramble-hover]').forEach(bindScrambleHover);
   });
 })();
 
-/* ── contact form → mailto ──────────────────────────────────────────── */
+/* ── contact form → Web3Forms ───────────────────────────────────────── */
 (function form() {
   const f = document.getElementById('contactForm');
   if (!f) return;
-  f.addEventListener('submit', (e) => {
+
+  f.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const d = new FormData(f);
-    const subject = encodeURIComponent(`[${d.get('subject') || 'Contacto'}] ${d.get('name')} — GANYMEDEV`);
-    const body = encodeURIComponent(
-      `Nombre: ${d.get('name')}\nEmail: ${d.get('email')}\nServicio: ${d.get('subject')}\n\n${d.get('message')}`
-    );
-    window.location.href = `mailto:ganymedev.sdk@gmail.com?subject=${subject}&body=${body}`;
+
+    const btn = f.querySelector('[type="submit"]');
+    const originalHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '// Transmitiendo...';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(f),
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        f.innerHTML = '<p class="form-success">// Mensaje recibido. Respondemos en horas, no en semanas.</p>';
+      } else {
+        throw new Error(json.message || 'Error desconocido');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+      let errEl = f.querySelector('.form-error');
+      if (!errEl) {
+        errEl = document.createElement('p');
+        errEl.className = 'form-error';
+        f.appendChild(errEl);
+      }
+      errEl.textContent = '// Error al transmitir. Intentá de nuevo o escribinos directamente.';
+    }
   });
 })();

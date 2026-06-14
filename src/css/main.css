@@ -398,6 +398,15 @@ body {
 .contact__method svg { width: 20px; height: 20px; color: var(--yellow); flex-shrink: 0; }
 
 .form { display: flex; flex-direction: column; gap: 16px; }
+.form-success {
+  font-family: var(--mono); font-size: 14px; color: var(--yellow);
+  border: 1px solid var(--line-yellow); padding: 24px 20px;
+  letter-spacing: 0.06em;
+}
+.form-error {
+  font-family: var(--mono); font-size: 13px; color: var(--magenta);
+  letter-spacing: 0.04em;
+}
 .field { position: relative; }
 .field label {
   position: absolute; top: -8px; left: 12px; padding: 0 6px; background: var(--void);
