@@ -109,7 +109,7 @@ document.querySelectorAll('[data-scramble-hover]').forEach(bindScrambleHover);
       const json = await res.json();
 
       if (json.success) {
-        f.innerHTML = '<p class="form-success">// Mensaje recibido. Respondemos en horas, no en semanas.</p>';
+        f.innerHTML = `<p class="form-success">[ UPLINK ESTABLECIDO ]<br>Mensaje cifrado recibido. Coordenadas registradas.<br>// En ruta. Menos de 24 horas.</p>`;
       } else {
         throw new Error(json.message || 'Error desconocido');
       }
